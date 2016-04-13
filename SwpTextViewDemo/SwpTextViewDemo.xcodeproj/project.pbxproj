@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		462FD3231CBE354200905422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 462FD3221CBE354200905422 /* main.m */; };
+		462FD3261CBE354200905422 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 462FD3251CBE354200905422 /* AppDelegate.m */; };
+		462FD3281CBE354200905422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462FD3271CBE354200905422 /* Assets.xcassets */; };
+		462FD32B1CBE354200905422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462FD3291CBE354200905422 /* LaunchScreen.storyboard */; };
+		462FD3341CBE357000905422 /* SwpTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462FD3331CBE357000905422 /* SwpTextViewController.m */; };
+		462FD3481CBE362600905422 /* SwpTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 462FD3471CBE362600905422 /* SwpTextView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		462FD31E1CBE354200905422 /* SwpTextViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwpTextViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		462FD3221CBE354200905422 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		462FD3241CBE354200905422 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		462FD3251CBE354200905422 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		462FD3271CBE354200905422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		462FD32A1CBE354200905422 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		462FD32C1CBE354200905422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		462FD3321CBE357000905422 /* SwpTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpTextViewController.h; sourceTree = "<group>"; };
+		462FD3331CBE357000905422 /* SwpTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpTextViewController.m; sourceTree = "<group>"; };
+		462FD3461CBE362600905422 /* SwpTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpTextView.h; sourceTree = "<group>"; };
+		462FD3471CBE362600905422 /* SwpTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpTextView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		462FD31B1CBE354200905422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		462FD3151CBE354200905422 = {
+			isa = PBXGroup;
+			children = (
+				462FD3451CBE362600905422 /* SwpTextView */,
+				462FD3201CBE354200905422 /* SwpTextViewDemo */,
+				462FD31F1CBE354200905422 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		462FD31F1CBE354200905422 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				462FD31E1CBE354200905422 /* SwpTextViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		462FD3201CBE354200905422 /* SwpTextViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				462FD3321CBE357000905422 /* SwpTextViewController.h */,
+				462FD3331CBE357000905422 /* SwpTextViewController.m */,
+				462FD3241CBE354200905422 /* AppDelegate.h */,
+				462FD3251CBE354200905422 /* AppDelegate.m */,
+				462FD3271CBE354200905422 /* Assets.xcassets */,
+				462FD3291CBE354200905422 /* LaunchScreen.storyboard */,
+				462FD32C1CBE354200905422 /* Info.plist */,
+				462FD3211CBE354200905422 /* Supporting Files */,
+			);
+			path = SwpTextViewDemo;
+			sourceTree = "<group>";
+		};
+		462FD3211CBE354200905422 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				462FD3221CBE354200905422 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		462FD3451CBE362600905422 /* SwpTextView */ = {
+			isa = PBXGroup;
+			children = (
+				462FD3461CBE362600905422 /* SwpTextView.h */,
+				462FD3471CBE362600905422 /* SwpTextView.m */,
+			);
+			name = SwpTextView;
+			path = ../SwpTextView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		462FD31D1CBE354200905422 /* SwpTextViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 462FD32F1CBE354200905422 /* Build configuration list for PBXNativeTarget "SwpTextViewDemo" */;
+			buildPhases = (
+				462FD31A1CBE354200905422 /* Sources */,
+				462FD31B1CBE354200905422 /* Frameworks */,
+				462FD31C1CBE354200905422 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwpTextViewDemo;
+			productName = SwpTextViewDemo;
+			productReference = 462FD31E1CBE354200905422 /* SwpTextViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		462FD3161CBE354200905422 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = swp_song;
+				TargetAttributes = {
+					462FD31D1CBE354200905422 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 462FD3191CBE354200905422 /* Build configuration list for PBXProject "SwpTextViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 462FD3151CBE354200905422;
+			productRefGroup = 462FD31F1CBE354200905422 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				462FD31D1CBE354200905422 /* SwpTextViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		462FD31C1CBE354200905422 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462FD3281CBE354200905422 /* Assets.xcassets in Resources */,
+				462FD32B1CBE354200905422 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		462FD31A1CBE354200905422 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462FD3261CBE354200905422 /* AppDelegate.m in Sources */,
+				462FD3231CBE354200905422 /* main.m in Sources */,
+				462FD3481CBE362600905422 /* SwpTextView.m in Sources */,
+				462FD3341CBE357000905422 /* SwpTextViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		462FD3291CBE354200905422 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				462FD32A1CBE354200905422 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		462FD32D1CBE354200905422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		462FD32E1CBE354200905422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		462FD3301CBE354200905422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwpTextViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SwpTextViewDemo.SwpTextViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		462FD3311CBE354200905422 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwpTextViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SwpTextViewDemo.SwpTextViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		462FD3191CBE354200905422 /* Build configuration list for PBXProject "SwpTextViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				462FD32D1CBE354200905422 /* Debug */,
+				462FD32E1CBE354200905422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		462FD32F1CBE354200905422 /* Build configuration list for PBXNativeTarget "SwpTextViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				462FD3301CBE354200905422 /* Debug */,
+				462FD3311CBE354200905422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 462FD3161CBE354200905422 /* Project object */;
+}
