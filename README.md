@@ -26,7 +26,7 @@ pod 'SwpTextView'
 ---
 
 #####效果：
-![效果](http://o2oservice.youzhiapp.com/uploads/swpdetupianwangdianzhengnibieshan.gif)
+![(效果)](https://raw.githubusercontent.com/swp-song/SwpTextView/master/Screenshot/SwpTextView.gif)
 ---
 
 #####备注:
