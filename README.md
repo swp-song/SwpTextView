@@ -3,7 +3,7 @@
 
 ##### 封装 带 Placeholder 的 TextView
 ---
-#####导入：
+##### 导入：
 ```
 手动导入：
 
@@ -25,11 +25,11 @@ pod 'SwpTextView'
 ```
 ---
 
-#####效果：
+##### 效果：
 ![(效果)](https://raw.githubusercontent.com/swp-song/SwpTextView/master/Screenshot/SwpTextView.gif)
 ---
 
-#####备注:
+##### 备注:
 ```
 交流 群号 : 85400118
 ```
