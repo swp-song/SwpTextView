@@ -1,48 +1,62 @@
 # SwpTextView
 
----
-
-#### SwpTextView:
-
-```
-1. 在开发中, 用户输入大量文本信息，苹果自带控件 UITextField 已经满足不了我们需求，UITextView 又没有 Placeholder 属性
-
-2. 在这种需求的基础上，改造了下系统的 UITextView，使它具备了 Placeholder效果
-```
-
----
-
-##### 效果：
-
-![(效果)](https://raw.githubusercontent.com/swp-song/SwpTextView/master/Screenshot/SwpTextView.gif)
-
----
-
-#### 导入：
-
-```rub
-
-1. 手动导入：
-
- 	* SwpTextView 文件夹 导入 项目 中
-
-	* #import "SwpTextView.h"
-
-2. CocoaPods 导入:
-
-	* pod search SwpTextView
-
-	* pod 'SwpTextView'
-
-	* #import <SwpTextView/SwpTextView.h>
-```
-
----
+[![Version](https://img.shields.io/cocoapods/v/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView) [![License](https://img.shields.io/cocoapods/l/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView) [![Platform](https://img.shields.io/cocoapods/p/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView)
 
 
-##### PS:
-```
-1. © 著作权归作者:swp_song, 如需转载请标明出处如果喜欢.
-2. 欢迎 Star
-```
----
+-------
+
+
+### SwpTextView:
+
+> * 在开发中, 用户输入大量文本信息，苹果自带控件 UITextField 已经满足不了我们需求，UITextView 又没有 Placeholder 属性
+> * 在这种需求的基础上，改造了下系统的 UITextView，使它具备了 Placeholder效果
+
+-------
+
+### 效果：
+
+-------
+
+
+### 导入:
+
+> * 手动导入：
+> 
+>> * **SwpTextView** 文件夹导入项目中。
+>> * **`#import "SwpTextView.h"`**
+
+> -------
+
+> * CocoaPods 导入:
+> 
+>> * **pod search SwpTextView**
+>> * **pod 'SwpTextView'**
+>> * **`#import <SwpTextView/SwpTextView.h>`**
+
+-------
+
+
+### 版本记录
+
+> * 版本版本：2.0.0
+> * 更新时间：2018-01-23 11:57:44
+> * 更新内容：
+    * 更新UI样式，新增链式回调方法
+
+-------
+
+### 备注
+
+> * 持续更新, 如果喜欢, 欢迎 Star
+
+-------
+
+### 声明
+
+ > * **著作权归 ©swp_song，如需转载请标明出处**
+
+-------
+
+
+
+

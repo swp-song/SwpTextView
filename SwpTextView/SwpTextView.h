@@ -2,10 +2,9 @@
 //  SwpTextView.h
 //  swp_song
 //
-//  Created by swp_song on 16/1/31.
-//  Copyright © 2016年 swp_song. All rights reserved.
+//  Created by swp_song on 2018/1/18.
+//  Copyright © 2018年 swp_song. All rights reserved.
 //
-//  @author --->    swp_song    ( SwpTextView 自带 Placeholder )
 
 #import <UIKit/UIKit.h>
 
@@ -13,22 +12,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef double SwpTimeInterval;
 
-/*! SwpTextViewTextChangeHeadle Block !*/
-typedef void(^SwpTextViewTextChangeHeadle)(SwpTextView *swpTextView, NSString *changeText);
+/* SwpTextViewTextChange Block */
+typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NSString * _Nonnull changeText);
 
 @protocol SwpTextViewDelegate <NSObject>
 
 @optional
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpTextView:changeText:     ( swpTextView 代理方法 用户输入文字变化调用 )
+ *  @brief  swpTextView:changeText: ( SwpTextView 代理方法，用户输入文字变化调用 )
  *
- *  @param  swpTextView
+ *  @param  swpTextView swpTextView
  *
- *  @param  changeText
+ *  @param  changeText  changeText
  */
 - (void)swpTextView:(SwpTextView *)swpTextView changeText:(NSString *)changeText;
 
@@ -38,128 +36,109 @@ typedef void(^SwpTextViewTextChangeHeadle)(SwpTextView *swpTextView, NSString *c
 
 /*! 设置 swpTextView  显示的数据, 取出显示的数据 !*/
 @property (nonatomic, copy, readonly) NSString *swpTextViewText;
-/*! 设置 swpTextView  placeholder  显示文字      !*/
-@property (nonatomic, copy  ) NSString *swpTextViewPlaceholder;
-/*! 设置 swpTextView 文字大小                    !*/
-@property (nonatomic, assign) CGFloat  swpTextViewTextFontSize;
-/*! 设置 swpTextView placeholder 文字的大小      !*/
-@property (nonatomic, assign) CGFloat  swpTextViewPlaceholderFontSize;
-/*! 设置 swpTextView 文字颜色                    !*/
-@property (nonatomic, strong) UIColor  *swpTextViewTextFontColor;
-/*! 设置 swpTextView placeholder 文字颜色        !*/
-@property (nonatomic, strong) UIColor  *swpTextViewPlaceholderFontColor;
-/*! 设置 swpTextView placeholder 隐藏动画时间    !*/
-@property (nonatomic, assign) SwpTimeInterval swpTextViewHiddenAnimationTime;
-/*! 设置 swpTextView Delegate                    !*/
-@property (nonatomic, weak) id<SwpTextViewDelegate>swpTextViewDelegate;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpText ( 设置显示文本 )
+ */
+- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpText;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewDelegate ( 设置代理 )
+ */
+- (SwpTextView *(^)(id<SwpTextViewDelegate>))swpTextViewDelegate;
 
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewPlaceholderDisplay:animateDuration:  ( 隐藏，显示 Placeholder  )
+ *
+ *  @param  isDisplay   isDisplay
+ *
+ *  @param  duration    duration
+ */
+- (void)swpTextViewPlaceholderDisplay:(BOOL)isDisplay animateDuration:(NSTimeInterval)duration;
 
-/*!
+
+/**
  *  @author swp_song
  *
  *  @brief  swpTextViewSetText  ( 设置 swpTextView 显示文字 )
  *
- *  @param  swpTextViewText
+ *  @param  swpTextViewText swpTextViewText
  */
 - (void)swpTextViewSetText:(NSString *)swpTextViewText;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpPlaceholderViewDisplay   ( 是否显示 swpPlaceholderView )
- *
- *  @param  isDisplay
- *
- *  @param  duration
+ *  @brief  textSystemFontSize  ( 设置，输入文本字体大小，系统字体 )
  */
-- (void)swpPlaceholderViewDisplay:(BOOL)isDisplay animateDuration:(SwpTimeInterval)duration;
+- (SwpTextView * _Nonnull (^)(CGFloat))textSystemFontSize;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewPlaceholder   ( 设置 swpTextView 显示 placeholder )
- *
- *  @param  swpTextViewPlaceholder
+ *  @brief  textFontColor  ( 设置，输入文本字体颜色 )
  */
-- (void)setSwpTextViewPlaceholder:(NSString *)swpTextViewPlaceholder;
+- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))textFontColor;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewTextFontSzie  ( 设置 swpTextView 字体大小 )
- *
- *  @param  swpTextViewTextFontSize
+ *  @brief  placeholder ( 设置 Placeholder 显示文字 )
  */
-- (void)setSwpTextViewTextFontSize:(CGFloat)swpTextViewTextFontSize;
+- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))placeholder;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewPlaceholderFontSize   ( 设置 swpTextView placeholder 字体大小 )
- *
- *  @param  swpTextViewPlaceholderFontSize
+ *  @brief  placeholderSystemFontSize   ( 设置，Placeholder 字体大小，系统字体 )
  */
-- (void)setSwpTextViewPlaceholderFontSize:(CGFloat)swpTextViewPlaceholderFontSize;
+- (SwpTextView * _Nonnull (^)(CGFloat))placeholderSystemFontSize;
 
-/*!
- *  @author swp_song
- *
- *  @brief  swpTextViewTextFontSize:swpTextViewPlaceholderFontSize: ( 设置 swpTextView 文字 and placeholder 字体大小 )
- *
- *  @param  textFontSize
- *
- *  @param  placeholderFontSize
- */
-- (void)swpTextViewTextFontSize:(CGFloat)textFontSize swpTextViewPlaceholderFontSize:(CGFloat)placeholderFontSize;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewTextFontColor ( 设置 swpTextView 字体颜色 )
- *
- *  @param  swpTextViewTextFontColor
+ *  @brief  placeholderFontColor  ( 设置，placeholder 字体颜色 )
  */
-- (void)setSwpTextViewTextFontColor:(UIColor *)swpTextViewTextFontColor;
+- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))placeholderFontColor;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewPlaceholderFontColor  ( 设置 swpTextView placeholder 字体颜色 )
- *
- *  @param  swpTextViewPlaceholderFontColor
+ *  @brief  placeholderFont ( 设置，placeholder 字体 )
  */
-- (void)setSwpTextViewPlaceholderFontColor:(UIColor *)swpTextViewPlaceholderFontColor;
+- (SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpTextViewTextFontColor:swpTextViewPlaceholderFontColor: ( 设置 swpTextView 文字 and placeholder 字体颜色 )
- *
- *  @param  textFontColor
- *
- *  @param  placeholderFontColor
+ *  @brief  placeholderHiddenAnimationTime  ( 设置，placeholder 隐藏动画时长 )
  */
-- (void)swpTextViewTextFontColor:(UIColor *)textFontColor swpTextViewPlaceholderFontColor:(UIColor *)placeholderFontColor;
+- (SwpTextView * _Nonnull (^)(NSTimeInterval))placeholderHiddenAnimationTime;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpTextViewChangeText           ( 用户输入数据回调 )
+ *  @brief  swpTextViewChange:  ( SwpTextView 回调方法，用户输入文字变化调用 )
  *
- *  @param  swpTextViewTextChangeHeadle
+ *  @param  swpTextViewChange   swpTextViewChange
  */
-- (void)swpTextViewChangeText:(SwpTextViewTextChangeHeadle)swpTextViewTextChangeHeadle;
+- (void)swpTextViewChange:(SwpTextViewTextChangeBlock _Nullable)swpTextViewChange;
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpTextSetText: ( 设置 swpText 文字 )
- *
- *  @param  swpText
+ *  @brief  swpTextViewChangeChain: ( SwpTextView 回调方法，用户输入文字变化调用 )
  */
-- (void)swpTextSetText:(NSString *)swpText;
+- (SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nullable))swpTextViewChangeChain;
+
 
 @end
-
 NS_ASSUME_NONNULL_END

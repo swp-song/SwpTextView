@@ -2,66 +2,67 @@
 //  SwpTextView.m
 //  swp_song
 //
-//  Created by swp_song on 16/1/31.
-//  Copyright © 2016年 swp_song. All rights reserved.
+//  Created by swp_song on 2018/1/18.
+//  Copyright © 2018年 swp_song. All rights reserved.
 //
-//  @author --->    swp_song    ( SwpTextView 自带 Placeholder )
 
 #import "SwpTextView.h"
 
 
-static CGFloat const kSwpTextViewAcquiesceFontSize        = 15.0f;
+static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 
 @interface SwpTextView ()
 
 #pragma mark - UI   Propertys
-/*! ---------------------- UI   Property  ---------------------- !*/
-/*! 显示 placeholder View !*/
-@property (nonatomic, strong) UILabel *swpPlaceholderView;
-/*! ---------------------- UI   Property  ---------------------- !*/
+/* ---------------------- UI   Property ---------------------- */
+/* 显示 placeholder View */
+@property (nonatomic, strong) UILabel *placeholderView;
+/* ---------------------- UI   Property ---------------------- */
 #pragma mark - Data Propertys
-/*! ---------------------- Data Property  ---------------------- !*/
-/*! 用户输入数据回调      !*/
-@property (nonatomic, copy, setter = swpTextViewChangeText:) SwpTextViewTextChangeHeadle swpTextViewTextChangeHeadle;
-/*! ---------------------- Data Property  ---------------------- !*/
+/* ---------------------- Data Property ---------------------- */
+@property (nonatomic, assign) NSTimeInterval hiddenAnimationTime_;
+
+@property (nonatomic, weak) id<SwpTextViewDelegate>delegate_;
+/* SwpTextView 回调方法，用户输入文字变化调用 */
+@property (nonatomic, copy, setter = swpTextViewChange:) SwpTextViewTextChangeBlock swpTextViewChange;
+/* ---------------------- Data Property ---------------------- */
 
 @end
 
 @implementation SwpTextView
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  initWithFrame:  (Override initWithFrame)
+ *  @brief  initWithFrame:  ( Override Init )
  *
- *  @param  frame
+ *  @param  frame   frame
  *
- *  @return SwpTextView
+ *  @return UITextView
  */
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
-        
-        [self settingSwpTextViewProperty];
+        [self setProperty];
         [self setUpUI];
-        
     }
     return self;
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  layoutSubviews ( Override layoutSubviews )
+ *  @brief  layoutSubviews  ( Override layoutSubviews )
  */
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self settingUIFrame];
+    [self setUIFrame];
 }
-/*!
+
+/**
  *  @author swp_song
  *
- *  @brief  当前 控制器 被销毁时 调用
+ *  @brief  dealloc (  )
  */
 - (void)dealloc {
     NSLog(@"%s", __FUNCTION__);
@@ -75,246 +76,276 @@ static CGFloat const kSwpTextViewAcquiesceFontSize        = 15.0f;
  *  @brief  setupUI ( 添加控件 )
  */
 - (void)setUpUI {
-    [self addSubview:self.swpPlaceholderView];
+    [self addSubview:self.placeholderView];
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  settingSwpTextViewProperty  ( 设置 swpTextView 属性 )
+ *  @brief  setProperty ( 设置属性 )
  */
-- (void)settingSwpTextViewProperty {
+- (void)setProperty {
+    self.hiddenAnimationTime_ = 0.5;
     
-    self.swpTextViewHiddenAnimationTime = 0.5;
     self.font = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
-    [self showPlaceholderWithText:self.swpTextViewText == nil ? @"" : self.swpTextViewText animateDuration:self.swpTextViewHiddenAnimationTime];
+    [self showPlaceholder:self.swpTextViewText == nil ? @"" : self.swpTextViewText animateDuration:self.hiddenAnimationTime_];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:self];
 }
 
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  settingUIFrame  ( 设置 UI 控件 的 frame )
+ *  @brief  setUIFrame  ( 设置 UI 控件的 frame )
  */
-- (void)settingUIFrame {
-    CGFloat placeholderX          = 8.0;
-    self.swpPlaceholderView.frame = CGRectMake(placeholderX, 3, self.frame.size.width - placeholderX * 2.0, 25);
+- (void)setUIFrame {
+    CGFloat placeholderX = 8.0;
+    self.placeholderView.frame = CGRectMake(placeholderX, 3, self.frame.size.width - placeholderX * 2.0, 25);
 }
 
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  textDidChange   ( 通知 绑定方法 )
+ *  @brief  textDidChange   ( 通知绑定方法 )
  *
- *  @param  notification
+ *  @param  notification    notification
  */
 - (void)textDidChange:(NSNotification *)notification {
     _swpTextViewText = super.text;
     
-    if (self.swpTextViewTextChangeHeadle) self.swpTextViewTextChangeHeadle(self, super.text);
+    if (self.swpTextViewChange) self.swpTextViewChange(self, super.text);
     
-    if ([self.swpTextViewDelegate  respondsToSelector:@selector(swpTextView:changeText:)]) {
-        [self.swpTextViewDelegate swpTextView:self changeText:super.text];
+    if ([self.delegate_  respondsToSelector:@selector(swpTextView:changeText:)]) {
+        [self.delegate_ swpTextView:self changeText:super.text];
     }
     
-    [self showPlaceholderWithText:super.text animateDuration:self.swpTextViewHiddenAnimationTime];
+    [self showPlaceholder:super.text animateDuration:self.hiddenAnimationTime_];
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  showPlaceholderWithText ( 判断 文字 显示 | 隐藏 )
+ *  @brief  showPlaceholder:animateDuration:    ( 判断 Placeholder 显示，隐藏 )
  *
- *  @param  text
+ *  @param  text    text
  */
-- (void)showPlaceholderWithText:(NSString *)text animateDuration:(SwpTimeInterval)duration {
-    //textview长度为0
+- (void)showPlaceholder:(NSString *)text animateDuration:(NSTimeInterval)duration {
+    //  Textview 长度为0
     if (self.text.length == 0) {
-        //判断是否为删除键
+        
+        //  判断是否为删除键
         if ([text isEqualToString:@""]) {
-            [self swpPlaceholderViewDisplay:YES animateDuration:duration];
+            
+            [self swpTextViewPlaceholderDisplay:YES animateDuration:duration];
         } else {
-            [self swpPlaceholderViewDisplay:NO animateDuration:duration];
+            
+            [self swpTextViewPlaceholderDisplay:NO animateDuration:duration];
+            
         }
+        
     } else {
-        //textview长度不为0
+        // Textview 长度不为 0
         if (self.text.length == 1) {
-            //textview长度为1时候
+            //  Textview 长度为1时候
             if ([text isEqualToString:@""]) {
-                //判断是否为删除键
-                [self swpPlaceholderViewDisplay:YES animateDuration:duration];
+                
+                //  判断是否为删除键
+                [self swpTextViewPlaceholderDisplay:YES animateDuration:duration];
+                
             } else {
-                //不是删除
-                [self swpPlaceholderViewDisplay:NO animateDuration:duration];
+                //  不是删除
+                [self swpTextViewPlaceholderDisplay:NO animateDuration:duration];
             }
         } else {
-            //长度不为1时候
-            [self swpPlaceholderViewDisplay:NO animateDuration:duration];
+            //  长度不为1时候
+            [self swpTextViewPlaceholderDisplay:NO animateDuration:duration];
+            
         }
     }
 }
 
-/*!
- *  @author swp_song, 2016-02-01 11:19:02
+
+#pragma mark - Public Methods
+
+/**
+ *  @author swp_song
  *
- *  @brief  swpPlaceholderViewDisplay   ( 是否显示 swpPlaceholderView )
- *
- *  @param  isDisplay
- *
- *  @param  duration
+ *  @brief  swpText ( 设置显示文本 )
  */
-- (void)swpPlaceholderViewDisplay:(BOOL)isDisplay animateDuration:(SwpTimeInterval)duration {
+- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpText {
+    return ^(NSString *text) {
+        [self swpTextViewPlaceholderDisplay:NO animateDuration:0];
+        self.text = text;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewPlaceholderDisplay:animateDuration:  ( 隐藏，显示 Placeholder  )
+ *
+ *  @param  isDisplay   isDisplay
+ *
+ *  @param  duration    duration
+ */
+- (void)swpTextViewPlaceholderDisplay:(BOOL)isDisplay animateDuration:(NSTimeInterval)duration {
+    
     [UIView animateWithDuration:duration animations:^{
-        self.swpPlaceholderView.alpha = isDisplay;
+        self.placeholderView.alpha = isDisplay;
     }];
 }
 
-
-#pragma mark - Setting Property Public Methods
 /*!
  *  @author swp_song
  *
  *  @brief  swpTextViewSetText  ( 设置 swpTextView 显示文字 )
  *
- *  @param  swpTextViewText
+ *  @param  swpTextViewText swpTextViewText
  */
 - (void)swpTextViewSetText:(NSString *)swpTextViewText {
     self.text = swpTextViewText;
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewPlaceholder   ( 设置 swpTextView 显示 placeholder )
- *
- *  @param  swpTextViewPlaceholder
+ *  @brief  swpTextViewDelegate ( 设置代理 )
  */
-- (void)setSwpTextViewPlaceholder:(NSString *)swpTextViewPlaceholder {
-    _swpTextViewPlaceholder      = swpTextViewPlaceholder;
-    self.swpPlaceholderView.text = _swpTextViewPlaceholder;
+- (SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swpTextViewDelegate {
+    
+    return ^(id<SwpTextViewDelegate>delegate) {
+        self.delegate_ = delegate;
+        return self;
+    };
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewTextFontSzie  ( 设置 swpTextView 字体大小 )
- *
- *  @param  swpTextViewTextFontSize
+ *  @brief  textSystemFontSize  ( 设置，输入文本字体大小，系统字体 )
  */
-- (void)setSwpTextViewTextFontSize:(CGFloat)swpTextViewTextFontSize {
-    _swpTextViewTextFontSize = swpTextViewTextFontSize;
-    self.font                = [UIFont systemFontOfSize:_swpTextViewTextFontSize];
+- (SwpTextView * _Nonnull (^)(CGFloat))textSystemFontSize {
+    
+    return ^(CGFloat size) {
+        self.font = [UIFont systemFontOfSize:size];
+        return self;
+    };
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewPlaceholderFontSize   ( 设置 swpTextView placeholder 字体大小 )
- *
- *  @param  swpTextViewPlaceholderFontSize
+ *  @brief  textFontColor  ( 设置，输入文本字体颜色 )
  */
-- (void)setSwpTextViewPlaceholderFontSize:(CGFloat)swpTextViewPlaceholderFontSize {
-    _swpTextViewPlaceholderFontSize = swpTextViewPlaceholderFontSize;
-    self.swpPlaceholderView.font    = [UIFont systemFontOfSize:_swpTextViewPlaceholderFontSize];
+- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))textFontColor {
+    
+    return ^(UIColor *color) {
+        self.textColor = color;
+        return self;
+    };
 }
 
-/*!
+
+/**
  *  @author swp_song
  *
- *  @brief  swpTextViewTextFontSize:swpTextViewPlaceholderFontSize: ( 设置 swpTextView 文字 and placeholder 字体大小 )
- *
- *  @param  textFontSize
- *
- *  @param  placeholderFontSize
+ *  @brief  placeholder ( 设置 Placeholder )
  */
-- (void)swpTextViewTextFontSize:(CGFloat)textFontSize swpTextViewPlaceholderFontSize:(CGFloat)placeholderFontSize {
-    self.font                    = [UIFont systemFontOfSize:textFontSize];
-    self.swpPlaceholderView.font = [UIFont systemFontOfSize:placeholderFontSize];
+- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))placeholder {
+    return ^(NSString *placeholder) {
+        self.placeholderView.text = placeholder;
+        return self;
+    };
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewTextFontColor ( 设置 swpTextView 字体颜色 )
- *
- *  @param  swpTextViewTextFontColor
+ *  @brief  placeholderSystemFontSize   ( 设置，Placeholder 字体大小，系统字体 )
  */
-- (void)setSwpTextViewTextFontColor:(UIColor *)swpTextViewTextFontColor {
-    _swpTextViewTextFontColor = swpTextViewTextFontColor;
-    self.textColor            = _swpTextViewTextFontColor;
+- (SwpTextView * _Nonnull (^)(CGFloat))placeholderSystemFontSize {
+    return ^(CGFloat size) {
+        self.placeholderView.font = [UIFont systemFontOfSize:size];
+        return self;
+    };
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewPlaceholderFontColor  ( 设置 swpTextView placeholder 字体颜色 )
- *
- *  @param  swpTextViewPlaceholderFontColor
+ *  @brief  placeholderFontColor  ( 设置，placeholder 字体颜色 )
  */
-- (void)setSwpTextViewPlaceholderFontColor:(UIColor *)swpTextViewPlaceholderFontColor {
-    _swpTextViewPlaceholderFontColor  = swpTextViewPlaceholderFontColor;
-    self.swpPlaceholderView.textColor = _swpTextViewPlaceholderFontColor;
+- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))placeholderFontColor {
+ 
+    return ^(UIColor *color) {
+        self.placeholderView.textColor = color;
+        return self;
+    };
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpTextViewTextFontColor:swpTextViewPlaceholderFontColor: ( 设置 swpTextView 文字 and placeholder 字体颜色 )
- *
- *  @param  textFontColor
- *
- *  @param  placeholderFontColor
+ *  @brief  placeholderFont ( 设置，placeholder 字体 )
  */
-- (void)swpTextViewTextFontColor:(UIColor *)textFontColor swpTextViewPlaceholderFontColor:(UIColor *)placeholderFontColor {
-    self.textColor                    = textFontColor;
-    self.swpPlaceholderView.textColor = placeholderFontColor;
+- (SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont {
+    return ^(UIFont *font) {
+        self.placeholderView.font = font;
+        return self;
+    };
 }
 
-/*!
+/**
  *  @author swp_song
  *
- *  @brief  swpTextViewChangeText           ( 用户输入数据回调 )
- *
- *  @param  swpTextViewTextChangeHeadle
+ *  @brief  placeholderHiddenAnimationTime  ( 设置，placeholder 隐藏动画时长 )
  */
-- (void)swpTextViewChangeText:(SwpTextViewTextChangeHeadle)swpTextViewTextChangeHeadle {
-    _swpTextViewTextChangeHeadle = swpTextViewTextChangeHeadle;
+- (SwpTextView * _Nonnull (^)(NSTimeInterval))placeholderHiddenAnimationTime {
+    return ^(NSTimeInterval time) {
+        self.hiddenAnimationTime_ = time;
+        return self;
+    };
 }
 
-/*!
+
+/**
  *  @author swp_song
  *
- *  @brief  setSwpTextViewHiddenAnimationTime:  ( 设置 swpTextView placeholder 隐藏动画时间 )
+ *  @brief  swpTextViewChange:  ( SwpTextView 回调方法，用户输入文字变化调用 )
  *
- *  @param  swpTextViewHiddenAnimationTime
+ *  @param  swpTextViewChange   swpTextViewChange
  */
-- (void)setSwpTextViewHiddenAnimationTime:(SwpTimeInterval)swpTextViewHiddenAnimationTime {
-    _swpTextViewHiddenAnimationTime = swpTextViewHiddenAnimationTime;
+- (void)swpTextViewChange:(SwpTextViewTextChangeBlock)swpTextViewChange {
+    _swpTextViewChange = swpTextViewChange;
 }
 
-/*!
+
+/**
  *  @author swp_song
  *
- *  @brief  swpTextSetText: ( 设置 swpText 文字 )
- *
- *  @param  swpText
+ *  @brief  swpTextViewChangeChain: ( SwpTextView 回调方法，用户输入文字变化调用 )
  */
-- (void)swpTextSetText:(NSString *)swpText  {
-    [self showPlaceholderWithText:swpText animateDuration:0];
-    self.text = swpText;
+- (SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nonnull))swpTextViewChangeChain {
+    
+    return ^(SwpTextViewTextChangeBlock swpTextViewChange) {
+        _swpTextViewChange = swpTextViewChange;
+        return self;
+    };
 }
 
 #pragma mark - Init UI Methods
-- (UILabel *)swpPlaceholderView {
-    if (!_swpPlaceholderView) {
-        _swpPlaceholderView           = [[UILabel alloc] init];
-        _swpPlaceholderView.text      = @"placeholder";
-        _swpPlaceholderView.font      = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
-        _swpPlaceholderView.textColor = [UIColor lightGrayColor];
-    }
-    return _swpPlaceholderView;
+- (UILabel *)placeholderView {
+    
+    return !_placeholderView ? _placeholderView = ({
+        
+        UILabel *label = [UILabel new];
+        label.text      = @"placeholder";
+        label.font      = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
+        label.textColor = [UIColor lightGrayColor];
+        label;
+    }) : _placeholderView;
 }
 
 /*

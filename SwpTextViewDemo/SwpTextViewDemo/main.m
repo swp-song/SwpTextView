@@ -2,8 +2,8 @@
 //  main.m
 //  SwpTextViewDemo
 //
-//  Created by songweiping on 16/4/13.
-//  Copyright © 2016年 swp_song. All rights reserved.
+//  Created by swp_song on 2018/1/18.
+//  Copyright © 2018年 swp_song. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
