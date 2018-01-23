@@ -1,7 +1,9 @@
 PODS:
+  - IQKeyboardManager (5.0.7)
   - SwpTextView (2.0.1)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - SwpTextView (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,8 +11,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   SwpTextView: 8fd8a0353262109e650f5256d735866227235a63
 
-PODFILE CHECKSUM: c794125be04cd515e0f728860906ff41ba4aa2d5
+PODFILE CHECKSUM: babb8f6b470f0b512377e98bc57f7754b6ad630f
 
-COCOAPODS: 1.4.0.rc.1
+COCOAPODS: 1.4.0

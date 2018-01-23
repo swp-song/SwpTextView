@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class SwpTextView;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -34,7 +35,7 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
 
 @interface SwpTextView : UITextView
 
-/*! 设置 swpTextView  显示的数据, 取出显示的数据 !*/
+/* 设置 swpTextView  显示的数据, 取出显示的数据 */
 @property (nonatomic, copy, readonly) NSString *swpTextViewText;
 
 /**
@@ -49,8 +50,7 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *
  *  @brief  swpTextViewDelegate ( 设置代理 )
  */
-- (SwpTextView *(^)(id<SwpTextViewDelegate>))swpTextViewDelegate;
-
+- (SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swpTextViewDelegate;
 
 /**
  *  @author swp_song
@@ -62,16 +62,6 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *  @param  duration    duration
  */
 - (void)swpTextViewPlaceholderDisplay:(BOOL)isDisplay animateDuration:(NSTimeInterval)duration;
-
-
-/**
- *  @author swp_song
- *
- *  @brief  swpTextViewSetText  ( 设置 swpTextView 显示文字 )
- *
- *  @param  swpTextViewText swpTextViewText
- */
-- (void)swpTextViewSetText:(NSString *)swpTextViewText;
 
 /**
  *  @author swp_song
@@ -92,7 +82,7 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *
  *  @brief  placeholder ( 设置 Placeholder 显示文字 )
  */
-- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))placeholder;
+- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpTextViewPlaceholder;
 
 /**
  *  @author swp_song
@@ -115,6 +105,14 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *  @brief  placeholderFont ( 设置，placeholder 字体 )
  */
 - (SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont;
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpViewKeyboardType ( 设置，键盘样式 )
+ */
+- (SwpTextView * _Nonnull (^)(UIKeyboardType))swpViewKeyboardType;
 
 /**
  *  @author swp_song

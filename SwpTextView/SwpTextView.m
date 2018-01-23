@@ -20,8 +20,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /* ---------------------- UI   Property ---------------------- */
 #pragma mark - Data Propertys
 /* ---------------------- Data Property ---------------------- */
+/* 动画时长 */
 @property (nonatomic, assign) NSTimeInterval hiddenAnimationTime_;
-
+/* Delegate */
 @property (nonatomic, weak) id<SwpTextViewDelegate>delegate_;
 /* SwpTextView 回调方法，用户输入文字变化调用 */
 @property (nonatomic, copy, setter = swpTextViewChange:) SwpTextViewTextChangeBlock swpTextViewChange;
@@ -113,13 +114,13 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  */
 - (void)textDidChange:(NSNotification *)notification {
     _swpTextViewText = super.text;
-    
+
     if (self.swpTextViewChange) self.swpTextViewChange(self, super.text);
-    
+
     if ([self.delegate_  respondsToSelector:@selector(swpTextView:changeText:)]) {
         [self.delegate_ swpTextView:self changeText:super.text];
     }
-    
+
     [self showPlaceholder:super.text animateDuration:self.hiddenAnimationTime_];
 }
 
@@ -197,16 +198,6 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
     }];
 }
 
-/*!
- *  @author swp_song
- *
- *  @brief  swpTextViewSetText  ( 设置 swpTextView 显示文字 )
- *
- *  @param  swpTextViewText swpTextViewText
- */
-- (void)swpTextViewSetText:(NSString *)swpTextViewText {
-    self.text = swpTextViewText;
-}
 
 /**
  *  @author swp_song
@@ -216,6 +207,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 - (SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swpTextViewDelegate {
     
     return ^(id<SwpTextViewDelegate>delegate) {
+        if (!delegate) return self;
         self.delegate_ = delegate;
         return self;
     };
@@ -253,7 +245,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  placeholder ( 设置 Placeholder )
  */
-- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))placeholder {
+- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpTextViewPlaceholder {
     return ^(NSString *placeholder) {
         self.placeholderView.text = placeholder;
         return self;
@@ -293,6 +285,19 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 - (SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont {
     return ^(UIFont *font) {
         self.placeholderView.font = font;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpViewKeyboardType ( 设置，键盘样式 )
+ */
+- (SwpTextView * _Nonnull (^)(UIKeyboardType))swpViewKeyboardType {
+    
+    return ^(UIKeyboardType keyboardType) {
+        self.keyboardType = keyboardType;
         return self;
     };
 }

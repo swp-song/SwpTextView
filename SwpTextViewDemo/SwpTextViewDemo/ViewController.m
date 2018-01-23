@@ -28,15 +28,18 @@
     
     
     self.swpTextView
-    .placeholder(@"请输入")
+    .swpTextViewPlaceholder(@"请输入")
     .swpText(@"123123")
     .placeholderFontColor([self swpColorFromHEX:0x1B5D8C])
     .textFontColor([self swpColorFromHEX:0x508FF2])
     .swpTextViewDelegate(self)
+    .swpViewKeyboardType(UIKeyboardTypeDefault)
     .swpTextViewChangeChain(^(SwpTextView *swpTextView, NSString *changeText){
         //  注意 block 循环引用
         NSLog(@"swpTextViewChangeChain Block Log : %@", changeText);
     });
+//
+
 
 
 //    [self.swpTextView swpTextViewChange:^(SwpTextView * _Nonnull swpTextView, NSString * _Nonnull changeText) {
