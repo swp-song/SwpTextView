@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+#import <Masonry/Masonry.h>
 #import <SwpTextView/SwpTextView.h>
 
 
@@ -27,9 +28,17 @@
     [self.view addSubview:self.swpTextView];
     
     
+    
+    [self.swpTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view).mas_offset(UIEdgeInsetsMake(100, 10, 0, 10));
+        make.width.equalTo(self.swpTextView.mas_height).multipliedBy(1.5);
+    }];
+    
+    
+    
     self.swpTextView
     .swpTextViewPlaceholder(@"请输入")
-    .swpText(@"123123")
+    .swpText(@"😀😀")
     .placeholderFontColor([self swpColorFromHEX:0x1B5D8C])
     .textFontColor([self swpColorFromHEX:0x508FF2])
     .swpTextViewDelegate(self)
@@ -74,7 +83,7 @@
 - (SwpTextView *)swpTextView {
     
     return !_swpTextView ? _swpTextView = ({
-        SwpTextView *swpTextView = [[SwpTextView alloc] initWithFrame:CGRectMake(10, 100, self.view.frame.size.width - 20, 300)];
+        SwpTextView *swpTextView = [SwpTextView new];
         swpTextView.layer.borderWidth      = 1;
         swpTextView.layer.cornerRadius     = 4;
         swpTextView.layer.masksToBounds    = YES;

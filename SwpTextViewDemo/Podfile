@@ -11,6 +11,10 @@ target 'SwpTextViewDemo' do
   # Pods for SwpTextViewDemo
   # inhibit_all_warnings!
   
-  pod 'SwpTextView', :path => '../'
+  pod 'Masonry'
+  
   pod 'IQKeyboardManager'
+  
+  pod 'SwpTextView', :path => '../'
+  
 end
