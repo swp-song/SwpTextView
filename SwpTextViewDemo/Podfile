@@ -9,7 +9,7 @@ target 'SwpTextViewDemo' do
   # use_frameworks!
 
   # Pods for SwpTextViewDemo
-  # inhibit_all_warnings!
+  inhibit_all_warnings!
   
   pod 'Masonry'
   
