@@ -1,5 +1,5 @@
 PODS:
-  - SwpTextView (0.1.0)
+  - SwpTextView (2.0.1)
 
 DEPENDENCIES:
   - SwpTextView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwpTextView: 72abf41efaba957d2bc5de00a92c5c64845fa3fe
+  SwpTextView: 8fd8a0353262109e650f5256d735866227235a63
 
 PODFILE CHECKSUM: c794125be04cd515e0f728860906ff41ba4aa2d5
 
