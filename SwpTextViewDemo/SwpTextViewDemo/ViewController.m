@@ -36,14 +36,7 @@
     
     
     
-    self.swpTextView
-    .swpTextViewPlaceholder(@"请输入")
-    .swpText(@"😀😀")
-    .placeholderFontColor([self swpColorFromHEX:0x1B5D8C])
-    .textFontColor([self swpColorFromHEX:0x508FF2])
-    .swpTextViewDelegate(self)
-    .swpViewKeyboardType(UIKeyboardTypeDefault)
-    .swpTextViewChangeChain(^(SwpTextView *swpTextView, NSString *changeText){
+    self.swpTextView.swpTextViewChangeChain(^(SwpTextView *swpTextView, NSString *changeText){
         //  注意 block 循环引用
         NSLog(@"swpTextViewChangeChain Block Log : %@", changeText);
     });
@@ -83,12 +76,19 @@
 - (SwpTextView *)swpTextView {
     
     return !_swpTextView ? _swpTextView = ({
-        SwpTextView *swpTextView = [SwpTextView new];
-        swpTextView.layer.borderWidth      = 1;
-        swpTextView.layer.cornerRadius     = 4;
-        swpTextView.layer.masksToBounds    = YES;
-        swpTextView.layer.borderColor      = [self swpColorFromHEX:0xe5e5e5].CGColor;
-        swpTextView;
+       
+        SwpTextView
+        .swpTextViewInit()
+        .borderWidth(1)
+        .cornerRadius(4)
+        .borderColor([self swpColorFromHEX:0x522C79])
+        .swpTextViewPlaceholder(@"请输入")
+        .swpText(@"😀😀")
+        .placeholderFontColor([self swpColorFromHEX:0x1B5D8C])
+        .textFontColor([self swpColorFromHEX:0x508FF2])
+        .swpTextViewDelegate(self)
+        .swpViewKeyboardType(UIKeyboardTypeDefault);
+        
     }) : _swpTextView;
 }
 

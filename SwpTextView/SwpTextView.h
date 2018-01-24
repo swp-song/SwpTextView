@@ -35,8 +35,25 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
 
 @interface SwpTextView : UITextView
 
+
 /* 设置 swpTextView  显示的数据, 取出显示的数据 */
 @property (nonatomic, copy, readonly) NSString *swpTextViewText;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextView ( 快速初始化 )
+ *
+ *  @return SwpTextView
+ */
++ (instancetype)swpTextView;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewInit ( 快速初始化 )
+ */
++ (SwpTextView * (^)(void))swpTextViewInit;
 
 /**
  *  @author swp_song
@@ -121,6 +138,29 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  */
 - (SwpTextView * _Nonnull (^)(NSTimeInterval))placeholderHiddenAnimationTime;
 
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  borderWidth ( 设置，显示边框宽度 )
+ */
+- (SwpTextView * _Nonnull (^)(CGFloat))borderWidth;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  borderWidth ( 设置，显示边框圆角弧度 )
+ */
+- (SwpTextView * _Nonnull (^)(CGFloat))cornerRadius;
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  borderColor ( 设置，显示边框颜色 )
+ */
+- (SwpTextView * _Nonnull (^)(UIColor *))borderColor;
+
+
 /**
  *  @author swp_song
  *
@@ -136,6 +176,9 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *  @brief  swpTextViewChangeChain: ( SwpTextView 回调方法，用户输入文字变化调用 )
  */
 - (SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nullable))swpTextViewChangeChain;
+
+
+
 
 
 @end

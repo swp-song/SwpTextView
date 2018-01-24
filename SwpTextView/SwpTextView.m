@@ -168,6 +168,28 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 
 
 #pragma mark - Public Methods
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextView ( 快速初始化 )
+ *
+ *  @return SwpTextView
+ */
++ (instancetype)swpTextView {
+    return [self.class new];
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewInit ( 快速初始化 )
+ */
++ (SwpTextView * (^)(void))swpTextViewInit {
+    return ^(void) {
+        return [self.class swpTextView];
+    };
+}
+
 
 /**
  *  @author swp_song
@@ -314,6 +336,47 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
     };
 }
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  borderWidth ( 设置，显示边框宽度 )
+ */
+- (SwpTextView * _Nonnull (^)(CGFloat))borderWidth {
+    
+    return ^(CGFloat borderWidth) {
+        if (!borderWidth) return self;
+        self.layer.borderWidth = borderWidth;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  borderWidth ( 设置，显示边框圆角弧度 )
+ */
+- (SwpTextView * _Nonnull (^)(CGFloat))cornerRadius {
+    return ^(CGFloat cornerRadius) {
+        if (!cornerRadius) return self;
+        self.layer.cornerRadius     = cornerRadius;
+        self.layer.masksToBounds    = YES;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  borderColor ( 设置，显示边框颜色 )
+ */
+- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))borderColor {
+    return ^(UIColor *borderColor) {
+        if (!borderColor) return self;
+        self.layer.borderColor = borderColor.CGColor;
+        return self;
+    };
+}
+
 
 /**
  *  @author swp_song
@@ -339,6 +402,8 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
         return self;
     };
 }
+
+
 
 #pragma mark - Init UI Methods
 - (UILabel *)placeholderView {

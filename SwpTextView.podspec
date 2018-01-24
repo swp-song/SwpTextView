@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpTextView'
-  s.version          = '2.0.4'
+  s.version          = '2.1.0'
   s.summary          = "简单封装 TextView "
 
 # This description is used to generate tags and improve search results.
@@ -37,6 +37,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
