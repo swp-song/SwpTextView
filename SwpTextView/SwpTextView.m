@@ -377,6 +377,20 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
     };
 }
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewBackgroundColor  ( 设置，显示背景颜色 )
+ */
+- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swpTextViewBackgroundColor {
+    
+    return ^(UIColor *backgroundColor) {
+        if (!backgroundColor) return self;
+        self.backgroundColor = backgroundColor;
+        return self;
+    };
+}
+
 
 /**
  *  @author swp_song
@@ -402,7 +416,6 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
         return self;
     };
 }
-
 
 
 #pragma mark - Init UI Methods

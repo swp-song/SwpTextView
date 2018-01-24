@@ -160,6 +160,12 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  */
 - (SwpTextView * _Nonnull (^)(UIColor *))borderColor;
 
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpTextViewBackgroundColor  ( 设置，显示背景颜色 )
+ */
+- (SwpTextView * _Nonnull (^)(UIColor *))swpTextViewBackgroundColor;
 
 /**
  *  @author swp_song
@@ -176,9 +182,6 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *  @brief  swpTextViewChangeChain: ( SwpTextView 回调方法，用户输入文字变化调用 )
  */
 - (SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nullable))swpTextViewChangeChain;
-
-
-
 
 
 @end
