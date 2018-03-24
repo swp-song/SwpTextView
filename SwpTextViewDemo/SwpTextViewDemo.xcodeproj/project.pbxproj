@@ -106,7 +106,6 @@
 				2DB89DEB2010813D00BC5FDB /* Sources */,
 				2DB89DEC2010813D00BC5FDB /* Frameworks */,
 				2DB89DED2010813D00BC5FDB /* Resources */,
-				D30AF2B654975D22DD3DDB03 /* [CP] Embed Pods Frameworks */,
 				AB283B171F2868671DFAC103 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -199,21 +198,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwpTextViewDemo/Pods-SwpTextViewDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D30AF2B654975D22DD3DDB03 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwpTextViewDemo/Pods-SwpTextViewDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -1,6 +1,6 @@
 {
   "name": "SwpTextView",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "summary": "简单封装 TextView",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/swp-song/SwpTextView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/swp-song/SwpTextView.git",
-    "tag": "2.2.1"
+    "tag": "2.2.2"
   },
   "platforms": {
     "ios": "8.0"
