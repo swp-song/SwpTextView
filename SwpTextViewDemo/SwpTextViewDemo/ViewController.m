@@ -27,7 +27,8 @@
     // 更多属性 请详见 SwpTextView.h
     [self.view addSubview:self.swpTextView];
     
-    NSLog(@"Info : %@", self.swpTextView.swpTextViewInfo);
+    NSLog(@"Info    : %@", self.swpTextView.swpTextViewInfo);
+    NSLog(@"Version : %@", self.swpTextView.swpTextViewVersion);
     
     [self.swpTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view).mas_offset(UIEdgeInsetsMake(100, 10, 0, 10));

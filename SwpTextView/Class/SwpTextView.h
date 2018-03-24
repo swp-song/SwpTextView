@@ -39,6 +39,8 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
 
 /** SwpTextView 信息 */
 @property (nonatomic, copy, readonly) NSDictionary *swpTextViewInfo;
+/** SwpTextView 版本号 */
+@property (nonatomic, copy, readonly) NSString     *swpTextViewVersion;
 
 /**
  *  @author swp_song

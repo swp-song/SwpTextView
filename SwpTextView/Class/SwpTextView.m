@@ -49,6 +49,8 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
         
         _swpTextViewInfo     = [SwpTextViewUtils swpTextViewUtilsGetInformation];
         
+        _swpTextViewVersion  = _swpTextViewInfo[@"Version"];
+        
         [self setProperty];
         
         [self setUpUI];
