@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpTextView'
-  s.version          = '2.2.2'
+  s.version          = '2.2.3'
   s.summary          = "简单封装 TextView "
 
 # This description is used to generate tags and improve search results.

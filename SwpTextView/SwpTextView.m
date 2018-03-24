@@ -412,7 +412,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 - (SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nonnull))swpTextViewChangeChain {
     
     return ^(SwpTextViewTextChangeBlock swpTextViewChange) {
-        _swpTextViewChange = swpTextViewChange;
+        [self swpTextViewChange:swpTextViewChange];
         return self;
     };
 }

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @class SwpTextView;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -107,7 +106,6 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *  @brief  placeholderSystemFontSize   ( 设置，Placeholder 字体大小，系统字体 )
  */
 - (SwpTextView * _Nonnull (^)(CGFloat))placeholderSystemFontSize;
-
 
 /**
  *  @author swp_song

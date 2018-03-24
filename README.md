@@ -1,6 +1,6 @@
 # SwpTextView
 
-[![Version](https://img.shields.io/cocoapods/v/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView) [![License](https://img.shields.io/cocoapods/l/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView) [![Platform](https://img.shields.io/cocoapods/p/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView)
+[![Build Status](https://travis-ci.org/swp-song/SwpTextView.svg?branch=master)](https://travis-ci.org/swp-song/SwpTextView) [![Version](https://img.shields.io/cocoapods/v/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView) [![License](https://img.shields.io/cocoapods/l/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView) [![Platform](https://img.shields.io/cocoapods/p/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView)
 
 
 -------
@@ -39,6 +39,14 @@
 
 ### 版本记录
 
+> * 版本版本：2.2.3
+> * 更新时间：2018-03-24 20:24:30
+> * 更新内容：
+> 
+> >  *  迭代更新
+
+-------
+
 > * 版本版本：2.2.2
 > * 更新时间：2018-03-24 10:56:34
 > * 更新内容：
@@ -46,15 +54,6 @@
 >> *  新增 .travis.yml 文件，更新迭代。
 
 -------
-
-> * 版本版本：2.1.1
-> * 更新时间：2018-03-05 16:16:21
-> * 更新内容：
-> 
-> >  *  迭代更新
-
--------
-
 
 
 
