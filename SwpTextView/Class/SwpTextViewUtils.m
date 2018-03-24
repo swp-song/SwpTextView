@@ -18,8 +18,7 @@
  *  @return NSDictionary
  */
 + (NSDictionary *)swpTextViewUtilsGetInformation {
-    NSString *path = [NSBundle.mainBundle pathForResource:@"SwpTextView.bundle/SwpTextView" ofType:@"plist"];
-    return [NSDictionary dictionaryWithContentsOfFile:path];
+    return [NSDictionary dictionaryWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"SwpTextView.bundle/SwpTextView" ofType:@"plist"]];
 }
 
 @end
