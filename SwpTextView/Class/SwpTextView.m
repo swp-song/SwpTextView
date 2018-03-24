@@ -8,6 +8,8 @@
 
 #import "SwpTextView.h"
 
+#import "SwpTextViewUtils.h"
+
 
 static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 
@@ -44,7 +46,11 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
+        
+        _swpTextViewInfo     = [SwpTextViewUtils swpTextViewUtilsGetInformation];
+        
         [self setProperty];
+        
         [self setUpUI];
     }
     return self;

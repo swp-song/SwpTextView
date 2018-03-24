@@ -23,11 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [self swpColorFromHEX:0xf4f4f4];
-    
+
     // 更多属性 请详见 SwpTextView.h
     [self.view addSubview:self.swpTextView];
     
-    
+    NSLog(@"Info : %@", self.swpTextView.swpTextViewInfo);
     
     [self.swpTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view).mas_offset(UIEdgeInsetsMake(100, 10, 0, 10));
@@ -40,8 +40,6 @@
         //  注意 block 循环引用
         NSLog(@"swpTextViewChangeChain Block Log : %@", changeText);
     });
-//
-
 
 
 //    [self.swpTextView swpTextViewChange:^(SwpTextView * _Nonnull swpTextView, NSString * _Nonnull changeText) {

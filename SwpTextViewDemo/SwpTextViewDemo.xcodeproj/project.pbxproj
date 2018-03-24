@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0563BFD190C5C41F8E1B09ED /* libPods-SwpTextViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FA9C2D3E960F7ECDDDD004 /* libPods-SwpTextViewDemo.a */; };
+		2D91877420668AFE00AA50CA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D91877320668AFE00AA50CA /* Info.plist */; };
 		2DB89DF42010813D00BC5FDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB89DF32010813D00BC5FDB /* AppDelegate.m */; };
 		2DB89DF72010813D00BC5FDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB89DF62010813D00BC5FDB /* ViewController.m */; };
 		2DB89DFA2010813D00BC5FDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB89DF82010813D00BC5FDB /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		0F582A13C0ACFD4102665B8F /* Pods-SwpTextViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpTextViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwpTextViewDemo/Pods-SwpTextViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2D91877320668AFE00AA50CA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DB89DEF2010813D00BC5FDB /* SwpTextViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwpTextViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB89DF22010813D00BC5FDB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2DB89DF32010813D00BC5FDB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,7 +28,6 @@
 		2DB89DF92010813D00BC5FDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DB89DFB2010813D00BC5FDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DB89DFE2010813D00BC5FDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2DB89E002010813D00BC5FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DB89E012010813D00BC5FDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4FA9C2D3E960F7ECDDDD004 /* libPods-SwpTextViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwpTextViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67DE5F10479F9D338DEDB9B /* Pods-SwpTextViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpTextViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwpTextViewDemo/Pods-SwpTextViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,8 +73,8 @@
 				2DB89DF82010813D00BC5FDB /* Main.storyboard */,
 				2DB89DFB2010813D00BC5FDB /* Assets.xcassets */,
 				2DB89DFD2010813D00BC5FDB /* LaunchScreen.storyboard */,
-				2DB89E002010813D00BC5FDB /* Info.plist */,
 				2DB89E012010813D00BC5FDB /* main.m */,
+				2D91877320668AFE00AA50CA /* Info.plist */,
 			);
 			path = SwpTextViewDemo;
 			sourceTree = "<group>";
@@ -155,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D91877420668AFE00AA50CA /* Info.plist in Resources */,
 				2DB89DFF2010813D00BC5FDB /* LaunchScreen.storyboard in Resources */,
 				2DB89DFC2010813D00BC5FDB /* Assets.xcassets in Resources */,
 				2DB89DFA2010813D00BC5FDB /* Main.storyboard in Resources */,
@@ -190,10 +192,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwpTextViewDemo/Pods-SwpTextViewDemo-resources.sh",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/../../SwpTextView/Resources/SwpTextView.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SwpTextView.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

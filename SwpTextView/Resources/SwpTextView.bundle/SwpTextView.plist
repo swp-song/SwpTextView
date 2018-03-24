@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<string>2.3.0</string>
+	<key>Author</key>
+	<string>swp_song</string>
+	<key>GitHub</key>
+	<string>https://github.com/swp-song</string>
+	<key>SwpTextView</key>
+	<string>https://github.com/swp-song/SwpTextView</string>
+	<key>Website</key>
+	<array>
+		<string>https://swp-song.com</string>
+		<string>https://swp-song.cn</string>
+	</array>
+</dict>
+</plist>

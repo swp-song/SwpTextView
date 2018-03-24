@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpTextView'
-  s.version          = '2.2.3'
+  s.version          = '2.3.0'
   s.summary          = "简单封装 TextView "
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'SwpTextView'
+  s.source_files  = 'SwpTextView/Class/**/*.{h,m}'
+  s.resource      = "SwpTextView/Resources/SwpTextView.bundle"
 
   # s.resource_bundles = {
   #   'SwpTextView' => ['SwpTextView/Assets/*.png']

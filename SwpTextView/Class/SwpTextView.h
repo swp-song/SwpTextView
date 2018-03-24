@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-/* SwpTextViewTextChange Block */
+/** SwpTextViewTextChange Block */
 typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NSString * _Nonnull changeText);
 
 @protocol SwpTextViewDelegate <NSObject>
@@ -34,9 +34,11 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
 
 @interface SwpTextView : UITextView
 
+/** 设置 swpTextView  显示的数据, 取出显示的数据 */
+@property (nonatomic, copy, readonly) NSString     *swpTextViewText;
 
-/* 设置 swpTextView  显示的数据, 取出显示的数据 */
-@property (nonatomic, copy, readonly) NSString *swpTextViewText;
+/** SwpTextView 信息 */
+@property (nonatomic, copy, readonly) NSDictionary *swpTextViewInfo;
 
 /**
  *  @author swp_song
