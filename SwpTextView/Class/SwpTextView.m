@@ -192,7 +192,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpTextViewInit ( 快速初始化 )
  */
-+ (SwpTextView * (^)(void))swpTextViewInit {
++ (__kindof SwpTextView * (^)(void))swpTextViewInit {
     return ^(void) {
         return [self.class swpTextView];
     };
@@ -204,7 +204,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpText ( 设置显示文本 )
  */
-- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpText {
+- (__kindof SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpText {
     return ^(NSString *text) {
         [self swpTextViewPlaceholderDisplay:NO animateDuration:0];
         self.text = text;
@@ -234,7 +234,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpTextViewDelegate ( 设置代理 )
  */
-- (SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swpTextViewDelegate {
+- (__kindof SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swpTextViewDelegate {
     
     return ^(id<SwpTextViewDelegate>delegate) {
         if (!delegate) return self;
@@ -248,7 +248,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  textSystemFontSize  ( 设置，输入文本字体大小，系统字体 )
  */
-- (SwpTextView * _Nonnull (^)(CGFloat))textSystemFontSize {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))textSystemFontSize {
     
     return ^(CGFloat size) {
         self.font = [UIFont systemFontOfSize:size];
@@ -261,7 +261,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  textFontColor  ( 设置，输入文本字体颜色 )
  */
-- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))textFontColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))textFontColor {
     
     return ^(UIColor *color) {
         self.textColor = color;
@@ -275,7 +275,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  placeholder ( 设置 Placeholder )
  */
-- (SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpTextViewPlaceholder {
+- (__kindof SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpTextViewPlaceholder {
     return ^(NSString *placeholder) {
         self.placeholderView.text = placeholder;
         return self;
@@ -287,7 +287,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  placeholderSystemFontSize   ( 设置，Placeholder 字体大小，系统字体 )
  */
-- (SwpTextView * _Nonnull (^)(CGFloat))placeholderSystemFontSize {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))placeholderSystemFontSize {
     return ^(CGFloat size) {
         self.placeholderView.font = [UIFont systemFontOfSize:size];
         return self;
@@ -299,7 +299,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  placeholderFontColor  ( 设置，placeholder 字体颜色 )
  */
-- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))placeholderFontColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))placeholderFontColor {
  
     return ^(UIColor *color) {
         self.placeholderView.textColor = color;
@@ -312,7 +312,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  placeholderFont ( 设置，placeholder 字体 )
  */
-- (SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont {
+- (__kindof SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont {
     return ^(UIFont *font) {
         self.placeholderView.font = font;
         return self;
@@ -324,7 +324,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpViewKeyboardType ( 设置，键盘样式 )
  */
-- (SwpTextView * _Nonnull (^)(UIKeyboardType))swpViewKeyboardType {
+- (__kindof SwpTextView * _Nonnull (^)(UIKeyboardType))swpViewKeyboardType {
     
     return ^(UIKeyboardType keyboardType) {
         self.keyboardType = keyboardType;
@@ -337,7 +337,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  placeholderHiddenAnimationTime  ( 设置，placeholder 隐藏动画时长 )
  */
-- (SwpTextView * _Nonnull (^)(NSTimeInterval))placeholderHiddenAnimationTime {
+- (__kindof SwpTextView * _Nonnull (^)(NSTimeInterval))placeholderHiddenAnimationTime {
     return ^(NSTimeInterval time) {
         self.hiddenAnimationTime_ = time;
         return self;
@@ -349,7 +349,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  borderWidth ( 设置，显示边框宽度 )
  */
-- (SwpTextView * _Nonnull (^)(CGFloat))borderWidth {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))borderWidth {
     
     return ^(CGFloat borderWidth) {
         if (!borderWidth) return self;
@@ -363,7 +363,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  borderWidth ( 设置，显示边框圆角弧度 )
  */
-- (SwpTextView * _Nonnull (^)(CGFloat))cornerRadius {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))cornerRadius {
     return ^(CGFloat cornerRadius) {
         if (!cornerRadius) return self;
         self.layer.cornerRadius     = cornerRadius;
@@ -377,7 +377,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  borderColor ( 设置，显示边框颜色 )
  */
-- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))borderColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))borderColor {
     return ^(UIColor *borderColor) {
         if (!borderColor) return self;
         self.layer.borderColor = borderColor.CGColor;
@@ -390,7 +390,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpTextViewBackgroundColor  ( 设置，显示背景颜色 )
  */
-- (SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swpTextViewBackgroundColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swpTextViewBackgroundColor {
     
     return ^(UIColor *backgroundColor) {
         if (!backgroundColor) return self;
@@ -417,7 +417,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpTextViewChangeChain: ( SwpTextView 回调方法，用户输入文字变化调用 )
  */
-- (SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nonnull))swpTextViewChangeChain {
+- (__kindof SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nonnull))swpTextViewChangeChain {
     
     return ^(SwpTextViewTextChangeBlock swpTextViewChange) {
         [self swpTextViewChange:swpTextViewChange];

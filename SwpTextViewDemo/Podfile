@@ -10,7 +10,7 @@ target 'SwpTextViewDemo' do
 
   # Pods for SwpTextViewDemo
   inhibit_all_warnings!
-  
+
   pod 'Masonry'
   
   pod 'IQKeyboardManager'
