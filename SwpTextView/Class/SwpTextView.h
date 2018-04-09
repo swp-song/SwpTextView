@@ -12,8 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-/** SwpTextViewTextChange Block */
+/* SwpTextViewTextChange Block */
 typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NSString * _Nonnull changeText);
 
 @protocol SwpTextViewDelegate <NSObject>
@@ -34,12 +33,11 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
 
 @interface SwpTextView : UITextView
 
-/** 设置 swpTextView  显示的数据, 取出显示的数据 */
+/* 设置 swpTextView  显示的数据, 取出显示的数据 */
 @property (nonatomic, copy, readonly) NSString     *swpTextViewText;
-
-/** SwpTextView 信息 */
+/* SwpTextView 信息   */
 @property (nonatomic, copy, readonly) NSDictionary *swpTextViewInfo;
-/** SwpTextView 版本号 */
+/* SwpTextView 版本号 */
 @property (nonatomic, copy, readonly) NSString     *swpTextViewVersion;
 
 /**
@@ -125,7 +123,6 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  */
 - (__kindof SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont;
 
-
 /**
  *  @author swp_song
  *
@@ -139,7 +136,6 @@ typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NS
  *  @brief  placeholderHiddenAnimationTime  ( 设置，placeholder 隐藏动画时长 )
  */
 - (__kindof SwpTextView * _Nonnull (^)(NSTimeInterval))placeholderHiddenAnimationTime;
-
 
 /**
  *  @author swp_song

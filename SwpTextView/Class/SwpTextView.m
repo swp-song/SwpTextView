@@ -8,10 +8,12 @@
 
 #import "SwpTextView.h"
 
+/* ---------------------- Tool       ---------------------- */
 #import "SwpTextViewUtils.h"
+/* ---------------------- Tool       ---------------------- */
 
 
-static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
+FOUNDATION_EXPORT CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 
 @interface SwpTextView ()
 
@@ -399,7 +401,6 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
     };
 }
 
-
 /**
  *  @author swp_song
  *
@@ -430,7 +431,6 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 - (UILabel *)placeholderView {
     
     return !_placeholderView ? _placeholderView = ({
-        
         UILabel *label = [UILabel new];
         label.text      = @"placeholder";
         label.font      = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
