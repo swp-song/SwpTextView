@@ -1,7 +1,7 @@
 PODS:
   - IQKeyboardManager (5.0.8)
   - Masonry (1.1.0)
-  - SwpTextView (2.3.4)
+  - SwpTextView (2.3.5)
 
 DEPENDENCIES:
   - IQKeyboardManager
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SwpTextView: ac6fcefe96ef89cbada2105833a3dae55a969e58
+  SwpTextView: da74af84f9a01b681a676e4f6a588d10d1893aa6
 
 PODFILE CHECKSUM: 05fd0d16d6c3aaf1096b85d37d770a622def9733
 
