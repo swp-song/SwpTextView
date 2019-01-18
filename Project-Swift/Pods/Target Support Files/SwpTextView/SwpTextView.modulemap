@@ -1,0 +1,6 @@
+framework module SwpTextView {
+  umbrella header "SwpTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}

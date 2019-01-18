@@ -1,0 +1,34 @@
+{
+  "name": "SwpTextView",
+  "version": "3.0.0",
+  "summary": "简单封装 TextView",
+  "description": "TODO: 简单封装 TextView",
+  "homepage": "https://github.com/swp-song/SwpTextView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "swp-song": "396587868@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/swp-song/SwpTextView.git",
+    "tag": "3.0.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Object-C",
+      "source_files": "SwpTextView/Code/Object-C/*.{h,m}",
+      "resources": "SwpTextView/Resources/SwpTextView.bundle"
+    },
+    {
+      "name": "Swift",
+      "source_files": "SwpTextView/Code/Swift/*.swift"
+    }
+  ]
+}
