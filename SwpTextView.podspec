@@ -8,11 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpTextView'
-<<<<<<< HEAD
-  s.version          = '3.0.0'
-=======
-  s.version          = '2.3.4'
->>>>>>> parent of ad9db04... 2.3.5
+  s.version          = '2.3.5'
   s.summary          = ' 简单封装 TextView '
 
 # This description is used to generate tags and improve search results.
@@ -34,21 +30,8 @@ TODO: 简单封装 TextView
 
   s.ios.deployment_target = '8.0'
 
-  # s.default_subspec = ""
-
-  # Object-C
-  s.subspec 'Object-C' do |oc|
-    oc.source_files = 'SwpTextView/Code/Object-C/*.{h,m}'
-    oc.resource = 'SwpTextView/Resources/SwpTextView.bundle'
-  end
-
-  s.subspec 'Swift' do |swift|
-    swift.source_files = 'SwpTextView/Code/Swift/*.swift'
-    # swift.resource = 'SwpTextView/Resources/SwpTextView.bundle'
-  end
-
-  # s.source_files  = 'SwpTextView/Class/**/*.{h,m}'
-  # s.resource      = 'SwpTextView/Resources/SwpTextView.bundle'
+  s.source_files  = 'SwpTextView/Class/**/*.{h,m}'
+  s.resource      = 'SwpTextView/Resources/SwpTextView.bundle'
 
   # s.resource_bundles = {
   #   'SwpTextView' => ['SwpTextView/Assets/*.png']
@@ -56,6 +39,6 @@ TODO: 简单封装 TextView
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks    = 'UIKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
   s.requires_arc  = true
-  
 end
