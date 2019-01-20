@@ -8,7 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpTextView'
+<<<<<<< HEAD
   s.version          = '3.0.0'
+=======
+  s.version          = '2.3.4'
+>>>>>>> parent of ad9db04... 2.3.5
   s.summary          = ' 简单封装 TextView '
 
 # This description is used to generate tags and improve search results.

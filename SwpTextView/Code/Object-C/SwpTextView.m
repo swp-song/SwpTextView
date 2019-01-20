@@ -12,7 +12,8 @@
 #import "SwpTextViewUtils.h"
 /* ---------------------- Tool       ---------------------- */
 
-CGFloat const kSwpTextViewDefaultFontSize = 15.0f;
+
+FOUNDATION_EXPORT CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 
 @interface SwpTextView ()
 
@@ -97,7 +98,7 @@ CGFloat const kSwpTextViewDefaultFontSize = 15.0f;
 - (void)setProperty {
     self.hiddenAnimationTime_ = 0.5;
     
-    self.font = [UIFont systemFontOfSize:kSwpTextViewDefaultFontSize];
+    self.font = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
     [self showPlaceholder:self.swpTextViewText == nil ? @"" : self.swpTextViewText animateDuration:self.hiddenAnimationTime_];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:self];
 }
@@ -432,7 +433,7 @@ CGFloat const kSwpTextViewDefaultFontSize = 15.0f;
     return !_placeholderView ? _placeholderView = ({
         UILabel *label = [UILabel new];
         label.text      = @"placeholder";
-        label.font      = [UIFont systemFontOfSize:kSwpTextViewDefaultFontSize];
+        label.font      = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
         label.textColor = [UIColor lightGrayColor];
         label;
     }) : _placeholderView;

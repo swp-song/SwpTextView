@@ -12,8 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT CGFloat const kSwpTextViewDefaultFontSize;
-
 /* SwpTextViewTextChange Block */
 typedef void(^SwpTextViewTextChangeBlock)(SwpTextView * _Nonnull swpTextView, NSString * _Nonnull changeText);
 
