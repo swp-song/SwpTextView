@@ -1,0 +1,29 @@
+PODS:
+  - IQKeyboardManager (6.2.0)
+  - Masonry (1.1.0)
+  - SwpTextView (3.0.0):
+    - SwpTextView/Object-C (= 3.0.0)
+  - SwpTextView/Object-C (3.0.0)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - Masonry
+  - SwpTextView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IQKeyboardManager
+    - Masonry
+
+EXTERNAL SOURCES:
+  SwpTextView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SwpTextView: cd98a4c32cef5f5a1584015d38f7e5f2f6184b8b
+
+PODFILE CHECKSUM: abe59c78986f05176d84e362178584a989853ee3
+
+COCOAPODS: 1.6.0.beta.2

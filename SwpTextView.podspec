@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwpTextView'
-  s.version          = '2.3.5'
+  s.version          = '3.0.0'
   s.summary          = ' 简单封装 TextView '
 
 # This description is used to generate tags and improve search results.
@@ -28,17 +28,24 @@ TODO: 简单封装 TextView
   s.source           = { :git => 'https://github.com/swp-song/SwpTextView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  
+  s.ios.deployment_target = '9.0'
 
-  s.source_files  = 'SwpTextView/Class/**/*.{h,m}'
-  s.resource      = 'SwpTextView/Resources/SwpTextView.bundle'
-
-  # s.resource_bundles = {
-  #   'SwpTextView' => ['SwpTextView/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.default_subspec = 'Object-C'
+  
+  # Object-C
+  s.subspec 'Object-C' do |oc|
+    oc.ios.deployment_target = '9.0'
+    oc.source_files = 'SwpTextView/Object-C/Code/*.{h,m}'
+    oc.resource     = 'SwpTextView/Object-C/Resources/SwpTextView.bundle'
+  end
+  
+  s.subspec 'Swift' do |swift|
+    swift.id = '12.0'
+    swift.source_files = 'SwpTextView/Swift/Code/*.swift'
+  end
+  
   s.frameworks    = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
   s.requires_arc  = true
+  
 end

@@ -1,0 +1,16 @@
+PODS:
+  - SwpTextView/Swift (3.0.0)
+
+DEPENDENCIES:
+  - SwpTextView/Swift (from `../`)
+
+EXTERNAL SOURCES:
+  SwpTextView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwpTextView: cd98a4c32cef5f5a1584015d38f7e5f2f6184b8b
+
+PODFILE CHECKSUM: 6f1f077f742808d03c4b8b48e6040a71977e29f5
+
+COCOAPODS: 1.6.0.beta.2
