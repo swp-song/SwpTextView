@@ -41,7 +41,7 @@ TODO: 简单封装 TextView
   end
   
   s.subspec 'Swift' do |swift|
-    swift.deployment_target = '12.0'
+    swift.ios.deployment_target = '12.0'
     swift.source_files = 'SwpTextView/Swift/Code/*.swift'
   end
   
