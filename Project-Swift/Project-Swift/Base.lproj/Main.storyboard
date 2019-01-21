@@ -1,24 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJ1-gc-O1x">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="wWw-XJ-5bG">
+            <objects>
+                <navigationController id="GJ1-gc-O1x" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bxT-JR-Y3d">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="His-oi-HFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ySC-qh-6Ml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1306" y="-18"/>
+        </scene>
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QB-vs-TTV">
+                                <rect key="frame" x="10" y="214" width="355" height="35.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.84229462986623993" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0QB-vs-TTV" secondAttribute="height" multiplier="10:1" id="5Rp-PT-Lwk"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yhI-C8-i2Y" kind="show" id="lLo-7r-JZc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2r-Yw-gDd">
+                                <rect key="frame" x="10" y="349.5" width="355" height="35.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.84229462990000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0QB-vs-TTV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="HgN-dA-VHg"/>
+                            <constraint firstItem="0QB-vs-TTV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="NiY-fE-A5f"/>
+                            <constraint firstItem="r2r-Yw-gDd" firstAttribute="leading" secondItem="0QB-vs-TTV" secondAttribute="leading" id="Qyt-v4-eVh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0QB-vs-TTV" secondAttribute="trailing" constant="10" id="iRf-Nb-9DS"/>
+                            <constraint firstItem="r2r-Yw-gDd" firstAttribute="height" secondItem="0QB-vs-TTV" secondAttribute="height" id="reH-eQ-dxO"/>
+                            <constraint firstItem="r2r-Yw-gDd" firstAttribute="trailing" secondItem="0QB-vs-TTV" secondAttribute="trailing" id="s2n-2u-7Pu"/>
+                            <constraint firstItem="r2r-Yw-gDd" firstAttribute="width" secondItem="0QB-vs-TTV" secondAttribute="width" id="wNX-5C-eSa"/>
+                            <constraint firstItem="r2r-Yw-gDd" firstAttribute="top" secondItem="0QB-vs-TTV" secondAttribute="bottom" constant="100" id="xPn-Hv-kXY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LCI-lk-FCG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-490.39999999999998" y="-18.440779610194905"/>
+        </scene>
+        <!--View Controller1-->
+        <scene sceneID="cFe-jn-bZa">
+            <objects>
+                <viewController id="yhI-C8-i2Y" customClass="ViewController1" customModule="Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j0J-v6-9Nt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bgK-Ip-e8Q" customClass="SwpTextView" customModule="SwpTextView">
+                                <rect key="frame" x="10" y="245" width="355" height="177.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bgK-Ip-e8Q" secondAttribute="height" multiplier="2:1" id="Xsv-bt-Fh8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jiz-02-3cz" firstAttribute="trailing" secondItem="bgK-Ip-e8Q" secondAttribute="trailing" constant="10" id="Twv-WZ-DmX"/>
+                            <constraint firstItem="bgK-Ip-e8Q" firstAttribute="leading" secondItem="jiz-02-3cz" secondAttribute="leading" constant="10" id="UJy-EL-QXh"/>
+                            <constraint firstItem="bgK-Ip-e8Q" firstAttribute="centerY" secondItem="j0J-v6-9Nt" secondAttribute="centerY" id="exB-ma-7cs"/>
+                            <constraint firstItem="bgK-Ip-e8Q" firstAttribute="centerX" secondItem="j0J-v6-9Nt" secondAttribute="centerX" id="l8i-op-3UQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jiz-02-3cz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O9N-O5-vrB"/>
+                    <connections>
+                        <outlet property="textView" destination="bgK-Ip-e8Q" id="7tC-bK-myR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTY-bm-OIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="-369"/>
         </scene>
     </scenes>
 </document>

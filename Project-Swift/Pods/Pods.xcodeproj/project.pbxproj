@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		168CC113E2F60D5D24216263BCC5CEB8 /* Pods-Project-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C818834CB25CFF10E91E4963E0959BB2 /* Pods-Project-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C65321FBB31DF91B6CE8C6A1304E6E5 /* SwpTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2180DCD0783A4D88FAD2B977606870C /* SwpTextViewDelegate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		54A6EDA8C33DBC3202A133F6E3107F61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
 		5B209E113B637953F1D45F339791E51D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		7770031CEA875CFF211E53BCF0BD6F67 /* SwpTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A2372C97BE2C28AFFE57FFAB6E973B /* SwpTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7770031CEA875CFF211E53BCF0BD6F67 /* SwpTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 562945FEF4AB51FFD06E1770C08F1D16 /* SwpTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC3BC087D2EBEE3855C43E543B349061 /* SwpTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3068289E86D762048DC67EB2EC54067 /* SwpTextView-dummy.m */; };
 		B036DB8B17620DA422854A182C8A7A8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E404AA6957590324067E330E0EC533 /* UIKit.framework */; };
-		BE68AD9D64B31A9E7B2B37E610ACBB86 /* SwpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB904472B13B0F82C4A65C17F01FBED /* SwpTextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D136F13A9CC113159428AA9037AC7848 /* Pods-Project-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3BC7465BE6327ADE4163E4F96FF1F0 /* Pods-Project-Swift-dummy.m */; };
-		F0B7FF25DDAFCDDA2AE54BFE0FAD17D9 /* SwpTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 085A76F469D380C955626CB1DD160AF4 /* SwpTextView-dummy.m */; };
+		F36DA6242D75776661C9B534571A2355 /* SwpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB486BEC54144B6606E6E87BA5F2081C /* SwpTextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,30 +29,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		085A76F469D380C955626CB1DD160AF4 /* SwpTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwpTextView-dummy.m"; sourceTree = "<group>"; };
-		08A2372C97BE2C28AFFE57FFAB6E973B /* SwpTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwpTextView-umbrella.h"; sourceTree = "<group>"; };
-		0FB904472B13B0F82C4A65C17F01FBED /* SwpTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwpTextView.swift; path = SwpTextView/Swift/Code/SwpTextView.swift; sourceTree = "<group>"; };
+		0D946B1BFCECC8DC10A586456274724F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		13CA6A71F0DEA1206F848CD77A247287 /* Pods-Project-Swift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project-Swift-acknowledgements.plist"; sourceTree = "<group>"; };
 		1E3BC7465BE6327ADE4163E4F96FF1F0 /* Pods-Project-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Project-Swift-dummy.m"; sourceTree = "<group>"; };
 		212361CF96E178C6858D15CE5B2C2E1D /* Pods-Project-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Project-Swift.modulemap"; sourceTree = "<group>"; };
-		2B4B208A0C4B2B0551F62A27F7466AE0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		2FDCCA0AAB7336CB9DBF72D15EF1C221 /* SwpTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwpTextView.modulemap; sourceTree = "<group>"; };
+		51D2FF30560D7D35A306A82D893DC81C /* SwpTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwpTextView.modulemap; sourceTree = "<group>"; };
+		562945FEF4AB51FFD06E1770C08F1D16 /* SwpTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwpTextView-umbrella.h"; sourceTree = "<group>"; };
+		69B691EE05074D1484AFE4311D5D82C4 /* SwpTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwpTextView-Info.plist"; sourceTree = "<group>"; };
 		74E404AA6957590324067E330E0EC533 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		7DA2BABA2773BF080C15D0842B70F15E /* Pods-Project-Swift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Project-Swift-frameworks.sh"; sourceTree = "<group>"; };
-		81973849294D26116CEDAB97109B009E /* SwpTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwpTextView-Info.plist"; sourceTree = "<group>"; };
-		8D3EA668C472A54A44D33BAE1173E6E4 /* SwpTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwpTextView.xcconfig; sourceTree = "<group>"; };
-		919EB3E3EF0B87D82C746AC05D5D25D7 /* Pods_Project_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Project_Swift.framework; path = "Pods-Project-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B1014FCCF1D3979D6EAB811A668D5A1 /* SwpTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwpTextView-prefix.pch"; sourceTree = "<group>"; };
+		919EB3E3EF0B87D82C746AC05D5D25D7 /* Pods_Project_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		937EEFB6F5C78B67C6246E1BE2BF70B7 /* SwpTextView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwpTextView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9923E13066903F14C392E4A7F44688E8 /* SwpTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwpTextView-prefix.pch"; sourceTree = "<group>"; };
 		A2475B2CA431D815005C0A88B71C0B38 /* Pods-Project-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B2180DCD0783A4D88FAD2B977606870C /* SwpTextViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwpTextViewDelegate.swift; path = SwpTextView/Swift/Code/SwpTextViewDelegate.swift; sourceTree = "<group>"; };
+		B3068289E86D762048DC67EB2EC54067 /* SwpTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwpTextView-dummy.m"; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B374A5B8125CF45374A931EBBB01F8C8 /* Pods-Project-Swift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Project-Swift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B4B847A49270F97F8A05A83E29FB31DF /* SwpTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwpTextView.framework; path = SwpTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4B847A49270F97F8A05A83E29FB31DF /* SwpTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwpTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2999DE0ED88624118DCE3A6E0947A88 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C7EB6F8110C02C3523B2964DBD712118 /* Pods-Project-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project-Swift-Info.plist"; sourceTree = "<group>"; };
 		C818834CB25CFF10E91E4963E0959BB2 /* Pods-Project-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Project-Swift-umbrella.h"; sourceTree = "<group>"; };
+		CB253E3A255FBFE33C91F87F6D40017E /* SwpTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwpTextView.xcconfig; sourceTree = "<group>"; };
 		CEFA0F1226B2B3EF1FA0CDB722B39AFB /* Pods-Project-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		CF98CBEB7DB8988E0A9B0B0A5A141C1E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F3991DD9F74A09664C76436D8D68B85C /* SwpTextView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwpTextView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DB486BEC54144B6606E6E87BA5F2081C /* SwpTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwpTextView.swift; path = SwpTextView/Swift/Code/SwpTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +86,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		0980950F0E950882D0FACAF395B0B5D7 /* Pod */ = {
+		24D7E9ED1C439182F762ADD693BB9DD2 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				2B4B208A0C4B2B0551F62A27F7466AE0 /* LICENSE */,
-				CF98CBEB7DB8988E0A9B0B0A5A141C1E /* README.md */,
-				F3991DD9F74A09664C76436D8D68B85C /* SwpTextView.podspec */,
+				C2999DE0ED88624118DCE3A6E0947A88 /* LICENSE */,
+				0D946B1BFCECC8DC10A586456274724F /* README.md */,
+				937EEFB6F5C78B67C6246E1BE2BF70B7 /* SwpTextView.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -102,37 +104,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5AF42F3D25AD284F7FDA8AD64253C73F /* SwpTextView */ = {
+		5301678266D290C5A7837825A85DD6C5 /* SwpTextView */ = {
 			isa = PBXGroup;
 			children = (
-				0980950F0E950882D0FACAF395B0B5D7 /* Pod */,
-				5F10D95796CE83C57C934A034240A4DA /* Support Files */,
-				659F10D50D6D80C418F327AF90B4F6A1 /* Swift */,
+				24D7E9ED1C439182F762ADD693BB9DD2 /* Pod */,
+				536B1DB9F83EAFB6607C560D8F4BB7BA /* Support Files */,
+				8ACFAD21795F99D1D48F87A56FDAF70C /* Swift */,
 			);
 			name = SwpTextView;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		5F10D95796CE83C57C934A034240A4DA /* Support Files */ = {
+		536B1DB9F83EAFB6607C560D8F4BB7BA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2FDCCA0AAB7336CB9DBF72D15EF1C221 /* SwpTextView.modulemap */,
-				8D3EA668C472A54A44D33BAE1173E6E4 /* SwpTextView.xcconfig */,
-				085A76F469D380C955626CB1DD160AF4 /* SwpTextView-dummy.m */,
-				81973849294D26116CEDAB97109B009E /* SwpTextView-Info.plist */,
-				9B1014FCCF1D3979D6EAB811A668D5A1 /* SwpTextView-prefix.pch */,
-				08A2372C97BE2C28AFFE57FFAB6E973B /* SwpTextView-umbrella.h */,
+				51D2FF30560D7D35A306A82D893DC81C /* SwpTextView.modulemap */,
+				CB253E3A255FBFE33C91F87F6D40017E /* SwpTextView.xcconfig */,
+				B3068289E86D762048DC67EB2EC54067 /* SwpTextView-dummy.m */,
+				69B691EE05074D1484AFE4311D5D82C4 /* SwpTextView-Info.plist */,
+				9923E13066903F14C392E4A7F44688E8 /* SwpTextView-prefix.pch */,
+				562945FEF4AB51FFD06E1770C08F1D16 /* SwpTextView-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Project-Swift/Pods/Target Support Files/SwpTextView";
-			sourceTree = "<group>";
-		};
-		659F10D50D6D80C418F327AF90B4F6A1 /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				0FB904472B13B0F82C4A65C17F01FBED /* SwpTextView.swift */,
-			);
-			name = Swift;
 			sourceTree = "<group>";
 		};
 		65F8A57E9C02ED598D0DBE3AD139B4C8 /* Pods-Project-Swift */ = {
@@ -155,7 +149,7 @@
 		7BF3ABA96F318713232ED11ED8B3ABF8 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5AF42F3D25AD284F7FDA8AD64253C73F /* SwpTextView */,
+				5301678266D290C5A7837825A85DD6C5 /* SwpTextView */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -169,6 +163,15 @@
 				C43BB13413A7EB3B573A206C1F7EF3AE /* Products */,
 				982B5B52BCCC5C95F856F70DD2AC9B89 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8ACFAD21795F99D1D48F87A56FDAF70C /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				DB486BEC54144B6606E6E87BA5F2081C /* SwpTextView.swift */,
+				B2180DCD0783A4D88FAD2B977606870C /* SwpTextViewDelegate.swift */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		982B5B52BCCC5C95F856F70DD2AC9B89 /* Targets Support Files */ = {
@@ -234,7 +237,7 @@
 			buildConfigurationList = 8F5A14587EDB924B487B86185154CF92 /* Build configuration list for PBXNativeTarget "SwpTextView" */;
 			buildPhases = (
 				99D72D05E9F2140DB09B70DD93325759 /* Headers */,
-				7BD4D5BC532A1ED90547D29AEEA8739C /* Sources */,
+				37BD8C726D9283E916BC62162F5DFEF9 /* Sources */,
 				DA28D0BDD4C991A6489CEC2747FC8023 /* Frameworks */,
 				FB30F492A1331EF123BA52E906716D5F /* Resources */,
 			);
@@ -254,7 +257,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -292,12 +295,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7BD4D5BC532A1ED90547D29AEEA8739C /* Sources */ = {
+		37BD8C726D9283E916BC62162F5DFEF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0B7FF25DDAFCDDA2AE54BFE0FAD17D9 /* SwpTextView-dummy.m in Sources */,
-				BE68AD9D64B31A9E7B2B37E610ACBB86 /* SwpTextView.swift in Sources */,
+				AC3BC087D2EBEE3855C43E543B349061 /* SwpTextView-dummy.m in Sources */,
+				F36DA6242D75776661C9B534571A2355 /* SwpTextView.swift in Sources */,
+				1C65321FBB31DF91B6CE8C6A1304E6E5 /* SwpTextViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +330,6 @@
 			baseConfigurationReference = A2475B2CA431D815005C0A88B71C0B38 /* Pods-Project-Swift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -340,11 +343,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Project-Swift/Pods-Project-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Project-Swift/Pods-Project-Swift.modulemap";
 				OTHER_LDFLAGS = "";
@@ -365,7 +364,6 @@
 			baseConfigurationReference = CEFA0F1226B2B3EF1FA0CDB722B39AFB /* Pods-Project-Swift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -379,11 +377,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Project-Swift/Pods-Project-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Project-Swift/Pods-Project-Swift.modulemap";
 				OTHER_LDFLAGS = "";
@@ -402,9 +396,8 @@
 		};
 		4F65E73612B3F42246EB0E075D986759 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D3EA668C472A54A44D33BAE1173E6E4 /* SwpTextView.xcconfig */;
+			baseConfigurationReference = CB253E3A255FBFE33C91F87F6D40017E /* SwpTextView.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -419,11 +412,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwpTextView/SwpTextView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwpTextView/SwpTextView.modulemap";
 				PRODUCT_MODULE_NAME = SwpTextView;
 				PRODUCT_NAME = SwpTextView;
@@ -503,9 +492,8 @@
 		};
 		787D9D974318DEB18C5F3FF6BC5D59FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D3EA668C472A54A44D33BAE1173E6E4 /* SwpTextView.xcconfig */;
+			baseConfigurationReference = CB253E3A255FBFE33C91F87F6D40017E /* SwpTextView.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -520,11 +508,7 @@
 				INFOPLIST_FILE = "Target Support Files/SwpTextView/SwpTextView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwpTextView/SwpTextView.modulemap";
 				PRODUCT_MODULE_NAME = SwpTextView;
 				PRODUCT_NAME = SwpTextView;
@@ -592,8 +576,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
