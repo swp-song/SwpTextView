@@ -11,8 +11,9 @@
 		2DC8E0CF21F4AA9F000DA778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8E0CD21F4AA9F000DA778 /* Main.storyboard */; };
 		2DC8E0D121F4AA9F000DA778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8E0D021F4AA9F000DA778 /* Assets.xcassets */; };
 		2DC8E0D421F4AA9F000DA778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC8E0D221F4AA9F000DA778 /* LaunchScreen.storyboard */; };
-		F162C00B21F59B1700521C99 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F162C00A21F59B1600521C99 /* RootViewController.swift */; };
-		F162C00D21F59B4300521C99 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F162C00C21F59B4300521C99 /* ViewController1.swift */; };
+		F174FF5B21F876A8004158F8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF5821F876A8004158F8 /* RootViewController.swift */; };
+		F174FF5C21F876A8004158F8 /* XibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF5921F876A8004158F8 /* XibViewController.swift */; };
+		F174FF6221F8775C004158F8 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF6121F8775C004158F8 /* CodeViewController.swift */; };
 		F6E6AA67E49D11B2D2FE3107 /* Pods_Project_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91227E1DB094F985D3A9F233 /* Pods_Project_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,8 +27,9 @@
 		755DBCE2834096A0A2C93A51 /* Pods-Project-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Swift.release.xcconfig"; path = "Target Support Files/Pods-Project-Swift/Pods-Project-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		91227E1DB094F985D3A9F233 /* Pods_Project_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C236F4C643E55C290710AB0C /* Pods-Project-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Swift.debug.xcconfig"; path = "Target Support Files/Pods-Project-Swift/Pods-Project-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		F162C00A21F59B1600521C99 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		F162C00C21F59B4300521C99 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		F174FF5821F876A8004158F8 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F174FF5921F876A8004158F8 /* XibViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewController.swift; sourceTree = "<group>"; };
+		F174FF6121F8775C004158F8 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,18 +95,27 @@
 		F162C00821F59B1600521C99 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				F162C00921F59B1600521C99 /* Controller */,
+				F174FF5721F876A8004158F8 /* Controllers */,
+				F174FF5A21F876A8004158F8 /* Views */,
 			);
 			path = Code;
 			sourceTree = "<group>";
 		};
-		F162C00921F59B1600521C99 /* Controller */ = {
+		F174FF5721F876A8004158F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F162C00A21F59B1600521C99 /* RootViewController.swift */,
-				F162C00C21F59B4300521C99 /* ViewController1.swift */,
+				F174FF5821F876A8004158F8 /* RootViewController.swift */,
+				F174FF5921F876A8004158F8 /* XibViewController.swift */,
+				F174FF6121F8775C004158F8 /* CodeViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F174FF5A21F876A8004158F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				TargetAttributes = {
 					2DC8E0C521F4AA9F000DA778 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -227,9 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F162C00D21F59B4300521C99 /* ViewController1.swift in Sources */,
+				F174FF5B21F876A8004158F8 /* RootViewController.swift in Sources */,
+				F174FF6221F8775C004158F8 /* CodeViewController.swift in Sources */,
 				2DC8E0CA21F4AA9F000DA778 /* AppDelegate.swift in Sources */,
-				F162C00B21F59B1700521C99 /* RootViewController.swift in Sources */,
+				F174FF5C21F876A8004158F8 /* XibViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +389,7 @@
 			baseConfigurationReference = C236F4C643E55C290710AB0C /* Pods-Project-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Project-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,6 +398,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.Project-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,6 +409,7 @@
 			baseConfigurationReference = 755DBCE2834096A0A2C93A51 /* Pods-Project-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Project-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
