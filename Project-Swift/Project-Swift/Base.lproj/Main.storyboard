@@ -34,39 +34,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oo-Zk-c3e">
-                                <rect key="frame" x="10" y="264" width="355" height="35.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Oo-Zk-c3e">
+                                <rect key="frame" x="10" y="164" width="355" height="35.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.84229462990000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="7Oo-Zk-c3e" secondAttribute="height" multiplier="10:1" id="6wA-Kg-iRv"/>
+                                    <constraint firstAttribute="width" secondItem="7Oo-Zk-c3e" secondAttribute="height" multiplier="10:1" id="cvi-ne-TXp"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="This is the SwpTextView created by xib">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="highlighted" title="This is the SwpTextView created by xib"/>
                                 <connections>
                                     <segue destination="yhI-C8-i2Y" kind="show" id="0ak-5s-atd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebD-fx-q1R">
-                                <rect key="frame" x="10" y="379.5" width="355" height="35.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebD-fx-q1R">
+                                <rect key="frame" x="10" y="239.5" width="355" height="35.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.84229462990000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="This is the SwpTextView created by code">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="highlighted" title="This is the SwpTextView created by code"/>
                                 <connections>
                                     <segue destination="fF0-tO-qqC" kind="show" id="p9u-SG-t7b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCK-H2-4IX">
+                                <rect key="frame" x="10" y="315" width="355" height="35.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.84229462990000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="This is the CustomTextView created by xib">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="highlighted" title="This is the CustomTextView created by xib"/>
+                                <connections>
+                                    <segue destination="l4S-m8-Tgj" kind="show" id="DvS-hg-pwQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6n-G4-VpJ">
+                                <rect key="frame" x="10" y="390.5" width="355" height="35.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.84229462990000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="This is the CustomTextView created by code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="highlighted" title="This is the CustomTextView created by code"/>
+                                <connections>
+                                    <segue destination="d3B-wm-omP" kind="show" id="fc9-ZQ-cTg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ebD-fx-q1R" firstAttribute="trailing" secondItem="7Oo-Zk-c3e" secondAttribute="trailing" id="EtV-YX-Qmx"/>
-                            <constraint firstItem="ebD-fx-q1R" firstAttribute="leading" secondItem="7Oo-Zk-c3e" secondAttribute="leading" id="JKf-8S-DCm"/>
-                            <constraint firstItem="ebD-fx-q1R" firstAttribute="top" secondItem="7Oo-Zk-c3e" secondAttribute="bottom" constant="80" id="S9o-bh-MLt"/>
-                            <constraint firstItem="7Oo-Zk-c3e" firstAttribute="top" secondItem="cj9-H7-mSR" secondAttribute="top" constant="200" id="dzA-NV-ue3"/>
-                            <constraint firstItem="7Oo-Zk-c3e" firstAttribute="leading" secondItem="cj9-H7-mSR" secondAttribute="leading" constant="10" id="oFD-Pu-IM8"/>
-                            <constraint firstItem="cj9-H7-mSR" firstAttribute="trailing" secondItem="7Oo-Zk-c3e" secondAttribute="trailing" constant="10" id="sXK-0S-f9B"/>
-                            <constraint firstItem="ebD-fx-q1R" firstAttribute="height" secondItem="7Oo-Zk-c3e" secondAttribute="height" id="wce-nh-Zcr"/>
+                            <constraint firstItem="ebD-fx-q1R" firstAttribute="height" secondItem="7Oo-Zk-c3e" secondAttribute="height" id="0bf-tp-RIW"/>
+                            <constraint firstItem="iCK-H2-4IX" firstAttribute="centerX" secondItem="bh0-DQ-6HB" secondAttribute="centerX" id="GbG-GG-e51"/>
+                            <constraint firstItem="cj9-H7-mSR" firstAttribute="trailing" secondItem="7Oo-Zk-c3e" secondAttribute="trailing" constant="10" id="INh-xd-UDM"/>
+                            <constraint firstItem="cj9-H7-mSR" firstAttribute="trailing" secondItem="iCK-H2-4IX" secondAttribute="trailing" constant="10" id="Ldu-dh-zVV"/>
+                            <constraint firstItem="cj9-H7-mSR" firstAttribute="trailing" secondItem="C6n-G4-VpJ" secondAttribute="trailing" constant="10" id="LkW-Li-EP1"/>
+                            <constraint firstItem="C6n-G4-VpJ" firstAttribute="centerX" secondItem="bh0-DQ-6HB" secondAttribute="centerX" id="PSl-6C-XXX"/>
+                            <constraint firstItem="C6n-G4-VpJ" firstAttribute="height" secondItem="7Oo-Zk-c3e" secondAttribute="height" id="Xlu-Cn-TIX"/>
+                            <constraint firstItem="ebD-fx-q1R" firstAttribute="centerX" secondItem="bh0-DQ-6HB" secondAttribute="centerX" id="Zv1-Hi-Swa"/>
+                            <constraint firstItem="7Oo-Zk-c3e" firstAttribute="top" secondItem="cj9-H7-mSR" secondAttribute="top" constant="100" id="d9n-Cc-e5y"/>
+                            <constraint firstItem="iCK-H2-4IX" firstAttribute="height" secondItem="7Oo-Zk-c3e" secondAttribute="height" id="eT9-xm-CP9"/>
+                            <constraint firstItem="cj9-H7-mSR" firstAttribute="trailing" secondItem="ebD-fx-q1R" secondAttribute="trailing" constant="10" id="mlc-Ns-iwm"/>
+                            <constraint firstItem="C6n-G4-VpJ" firstAttribute="top" secondItem="iCK-H2-4IX" secondAttribute="bottom" constant="40" id="nf3-Pe-K8F"/>
+                            <constraint firstItem="7Oo-Zk-c3e" firstAttribute="centerX" secondItem="bh0-DQ-6HB" secondAttribute="centerX" id="rzb-4T-eFI"/>
+                            <constraint firstItem="iCK-H2-4IX" firstAttribute="top" secondItem="ebD-fx-q1R" secondAttribute="bottom" constant="40" id="y9O-QS-1rc"/>
+                            <constraint firstItem="ebD-fx-q1R" firstAttribute="top" secondItem="7Oo-Zk-c3e" secondAttribute="bottom" constant="40" id="zoZ-9B-9fd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cj9-H7-mSR"/>
                     </view>
@@ -74,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFV-dR-mQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="-68"/>
+            <point key="canvasLocation" x="-502" y="-27"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="GzH-rQ-FMe">
@@ -89,7 +125,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEh-Nn-zcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="180"/>
+            <point key="canvasLocation" x="1799" y="25"/>
+        </scene>
+        <!--Xib Custom View Controller-->
+        <scene sceneID="lfe-5F-s3H">
+            <objects>
+                <viewController id="l4S-m8-Tgj" customClass="XibCustomViewController" customModule="Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wed-Kx-n2d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yoE-dR-h9i" customClass="CustomTextView" customModule="Project_Swift" customModuleProvider="target">
+                                <rect key="frame" x="10" y="245" width="355" height="177.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yoE-dR-h9i" secondAttribute="height" multiplier="2:1" id="4vE-Ws-Zzk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CP4-Jl-dFV" firstAttribute="trailing" secondItem="yoE-dR-h9i" secondAttribute="trailing" constant="10" id="3U1-YS-oTy"/>
+                            <constraint firstItem="yoE-dR-h9i" firstAttribute="centerX" secondItem="wed-Kx-n2d" secondAttribute="centerX" id="A0w-cw-JfX"/>
+                            <constraint firstItem="yoE-dR-h9i" firstAttribute="leading" secondItem="CP4-Jl-dFV" secondAttribute="leading" constant="10" id="A7U-Pb-wzj"/>
+                            <constraint firstItem="yoE-dR-h9i" firstAttribute="centerY" secondItem="wed-Kx-n2d" secondAttribute="centerY" id="vTn-Vg-CHz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CP4-Jl-dFV"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="yoE-dR-h9i" id="ygU-Dl-0xL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44n-w5-crd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="1119"/>
+        </scene>
+        <!--Code Custom View Controller-->
+        <scene sceneID="oN8-Rk-iTT">
+            <objects>
+                <viewController id="d3B-wm-omP" customClass="CodeCustomViewController" customModule="Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e79-y6-iQC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rb1-Fe-v4s"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sB-gY-cPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="1119"/>
         </scene>
         <!--Xib View Controller-->
         <scene sceneID="cFe-jn-bZa">
@@ -125,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTY-bm-OIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="-525"/>
+            <point key="canvasLocation" x="897" y="-402"/>
         </scene>
     </scenes>
 </document>

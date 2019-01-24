@@ -1,16 +1,23 @@
 PODS:
+  - SnapKit (4.2.0)
   - SwpTextView/Swift (3.0.0)
 
 DEPENDENCIES:
+  - SnapKit
   - SwpTextView/Swift (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SnapKit
 
 EXTERNAL SOURCES:
   SwpTextView:
     :path: "../"
 
 SPEC CHECKSUMS:
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwpTextView: cd98a4c32cef5f5a1584015d38f7e5f2f6184b8b
 
-PODFILE CHECKSUM: 6f1f077f742808d03c4b8b48e6040a71977e29f5
+PODFILE CHECKSUM: e3126175e9862aac2bc3b100ff67c70d69f37a12
 
 COCOAPODS: 1.6.0.beta.2

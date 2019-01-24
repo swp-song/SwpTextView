@@ -7,10 +7,10 @@
 //
 
 public protocol SwpTextViewDelegate: UITextViewDelegate {
-    func swp_textViewDidChange(_ textView : SwpTextView, text : String?) -> Void
+    func swp_textViewDidChange(_ textView : SwpTextView, text : String) -> Void
 }
 
 extension SwpTextViewDelegate {
-    public func swp_textViewDidChange(_ textView : SwpTextView, text : String?) -> Void { }
+    public func swp_textViewDidChange(_ textView : SwpTextView, text : String) -> Void { }
 }
 

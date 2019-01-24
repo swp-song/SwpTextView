@@ -8,28 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		218B1C1CF25FF1BD6DB8A8AB /* libPods-Project-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBD42DDF8724E030C460CA9 /* libPods-Project-OC.a */; };
+		F111559521F9BC5E0046122F /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F111559421F9BC5E0046122F /* CustomTextView.m */; };
 		F117D42C21F1DBC900679D8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F117D42B21F1DBC900679D8E /* AppDelegate.m */; };
-		F117D42F21F1DBC900679D8E /* da.m in Sources */ = {isa = PBXBuildFile; fileRef = F117D42E21F1DBC900679D8E /* da.m */; };
 		F117D43221F1DBC900679D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F117D43021F1DBC900679D8E /* Main.storyboard */; };
 		F117D43421F1DBCA00679D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F117D43321F1DBCA00679D8E /* Assets.xcassets */; };
 		F117D43721F1DBCA00679D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F117D43521F1DBCA00679D8E /* LaunchScreen.storyboard */; };
 		F117D43A21F1DBCA00679D8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F117D43921F1DBCA00679D8E /* main.m */; };
+		F174FF7921F9B15E004158F8 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174FF7821F9B15E004158F8 /* RootViewController.m */; };
+		F174FF7C21F9B198004158F8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174FF7B21F9B198004158F8 /* BaseViewController.m */; };
+		F174FF7F21F9B1A7004158F8 /* XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174FF7E21F9B1A7004158F8 /* XibViewController.m */; };
+		F174FF8221F9B1B1004158F8 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174FF8121F9B1B1004158F8 /* CodeViewController.m */; };
+		F174FF8521F9B1BD004158F8 /* XibCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174FF8421F9B1BD004158F8 /* XibCustomViewController.m */; };
+		F174FF8821F9B1C8004158F8 /* CodeCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F174FF8721F9B1C8004158F8 /* CodeCustomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1EECB160FBB4F968B3395264 /* Pods-Project-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OC.debug.xcconfig"; path = "Target Support Files/Pods-Project-OC/Pods-Project-OC.debug.xcconfig"; sourceTree = "<group>"; };
 		A230B9CBF1C4CCD4AFAECD4A /* Pods-Project-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-OC.release.xcconfig"; path = "Target Support Files/Pods-Project-OC/Pods-Project-OC.release.xcconfig"; sourceTree = "<group>"; };
 		BCBD42DDF8724E030C460CA9 /* libPods-Project-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F111559321F9BC5E0046122F /* CustomTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTextView.h; sourceTree = "<group>"; };
+		F111559421F9BC5E0046122F /* CustomTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTextView.m; sourceTree = "<group>"; };
 		F117D42721F1DBC900679D8E /* Project-OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F117D42A21F1DBC900679D8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F117D42B21F1DBC900679D8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F117D42D21F1DBC900679D8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F117D42E21F1DBC900679D8E /* da.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = da.m; sourceTree = "<group>"; };
 		F117D43121F1DBC900679D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F117D43321F1DBCA00679D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F117D43621F1DBCA00679D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F117D43821F1DBCA00679D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F117D43921F1DBCA00679D8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F174FF7721F9B15E004158F8 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F174FF7821F9B15E004158F8 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F174FF7A21F9B198004158F8 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		F174FF7B21F9B198004158F8 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		F174FF7D21F9B1A7004158F8 /* XibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XibViewController.h; sourceTree = "<group>"; };
+		F174FF7E21F9B1A7004158F8 /* XibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XibViewController.m; sourceTree = "<group>"; };
+		F174FF8021F9B1B1004158F8 /* CodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
+		F174FF8121F9B1B1004158F8 /* CodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
+		F174FF8321F9B1BD004158F8 /* XibCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XibCustomViewController.h; sourceTree = "<group>"; };
+		F174FF8421F9B1BD004158F8 /* XibCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XibCustomViewController.m; sourceTree = "<group>"; };
+		F174FF8621F9B1C8004158F8 /* CodeCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeCustomViewController.h; sourceTree = "<group>"; };
+		F174FF8721F9B1C8004158F8 /* CodeCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeCustomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +100,9 @@
 		F117D42921F1DBC900679D8E /* Project-OC */ = {
 			isa = PBXGroup;
 			children = (
+				F174FF7121F9B0FD004158F8 /* Codes */,
 				F117D42A21F1DBC900679D8E /* AppDelegate.h */,
 				F117D42B21F1DBC900679D8E /* AppDelegate.m */,
-				F117D42D21F1DBC900679D8E /* ViewController.h */,
-				F117D42E21F1DBC900679D8E /* da.m */,
 				F117D43021F1DBC900679D8E /* Main.storyboard */,
 				F117D43321F1DBCA00679D8E /* Assets.xcassets */,
 				F117D43521F1DBCA00679D8E /* LaunchScreen.storyboard */,
@@ -93,6 +110,43 @@
 				F117D43921F1DBCA00679D8E /* main.m */,
 			);
 			path = "Project-OC";
+			sourceTree = "<group>";
+		};
+		F174FF7121F9B0FD004158F8 /* Codes */ = {
+			isa = PBXGroup;
+			children = (
+				F174FF7221F9B0FD004158F8 /* Views */,
+				F174FF7321F9B0FD004158F8 /* Contollers */,
+			);
+			path = Codes;
+			sourceTree = "<group>";
+		};
+		F174FF7221F9B0FD004158F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F111559321F9BC5E0046122F /* CustomTextView.h */,
+				F111559421F9BC5E0046122F /* CustomTextView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F174FF7321F9B0FD004158F8 /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				F174FF7721F9B15E004158F8 /* RootViewController.h */,
+				F174FF7821F9B15E004158F8 /* RootViewController.m */,
+				F174FF7A21F9B198004158F8 /* BaseViewController.h */,
+				F174FF7B21F9B198004158F8 /* BaseViewController.m */,
+				F174FF7D21F9B1A7004158F8 /* XibViewController.h */,
+				F174FF7E21F9B1A7004158F8 /* XibViewController.m */,
+				F174FF8021F9B1B1004158F8 /* CodeViewController.h */,
+				F174FF8121F9B1B1004158F8 /* CodeViewController.m */,
+				F174FF8321F9B1BD004158F8 /* XibCustomViewController.h */,
+				F174FF8421F9B1BD004158F8 /* XibCustomViewController.m */,
+				F174FF8621F9B1C8004158F8 /* CodeCustomViewController.h */,
+				F174FF8721F9B1C8004158F8 /* CodeCustomViewController.m */,
+			);
+			path = Contollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +182,7 @@
 				TargetAttributes = {
 					F117D42621F1DBC900679D8E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -216,9 +271,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F117D42F21F1DBC900679D8E /* da.m in Sources */,
+				F111559521F9BC5E0046122F /* CustomTextView.m in Sources */,
+				F174FF8521F9B1BD004158F8 /* XibCustomViewController.m in Sources */,
+				F174FF7C21F9B198004158F8 /* BaseViewController.m in Sources */,
+				F174FF7F21F9B1A7004158F8 /* XibViewController.m in Sources */,
+				F174FF8821F9B1C8004158F8 /* CodeCustomViewController.m in Sources */,
 				F117D43A21F1DBCA00679D8E /* main.m in Sources */,
 				F117D42C21F1DBC900679D8E /* AppDelegate.m in Sources */,
+				F174FF7921F9B15E004158F8 /* RootViewController.m in Sources */,
+				F174FF8221F9B1B1004158F8 /* CodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +422,7 @@
 			baseConfigurationReference = 1EECB160FBB4F968B3395264 /* Pods-Project-OC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Project-OC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -368,9 +430,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.Project-OC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -379,6 +443,7 @@
 			baseConfigurationReference = A230B9CBF1C4CCD4AFAECD4A /* Pods-Project-OC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Project-OC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -386,9 +451,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.Project-OC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

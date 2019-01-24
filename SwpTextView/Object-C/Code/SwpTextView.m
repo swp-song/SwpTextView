@@ -25,10 +25,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /* ---------------------- Data Property ---------------------- */
 /* 动画时长 */
 @property (nonatomic, assign) NSTimeInterval aHiddenAnimationTime;
-/* Delegate */
-@property (nonatomic, weak) id<SwpTextViewDelegate>aDelegate;
+
 /* SwpTextView 回调方法，用户输入文字变化调用 */
-@property (nonatomic, copy, setter = swpTextViewChange:) SwpTextViewTextChangeBlock swpTextViewChange;
+@property (nonatomic, copy, setter = swp_textViewChangeEvent:) SwpTextViewTextChangeBlock swp_textViewChangeEvent;
 /* ---------------------- Data Property ---------------------- */
 
 @end
@@ -95,7 +94,15 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *  @brief  dealloc (  )
  */
 - (void)dealloc {
-    NSLog(@"%s", __FUNCTION__);
+    
+   
+    
+#if DEBUG
+    NSLog(@"%@ - %s - dealloc", self.class, __FUNCTION__);
+#else
+    
+#endif
+    
     // 移除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -117,10 +124,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 - (void)setProperty {
     self.aHiddenAnimationTime = 0.5;
     self.font = [UIFont systemFontOfSize:kSwpTextViewAcquiesceFontSize];
-    [self showPlaceholder:self.swpTextViewText == nil ? @"" : self.swpTextViewText animateDuration:self.aHiddenAnimationTime];
+    [self aPlaceholder:self.swp_Text == nil ? @"" : self.swp_Text animate:self.aHiddenAnimationTime];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:self];
 }
-
 
 /**
  *  @author swp_song
@@ -132,7 +138,6 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
     self.placeholderView.frame = CGRectMake(placeholderX, 3, self.frame.size.width - placeholderX * 2.0, 25);
 }
 
-
 /**
  *  @author swp_song
  *
@@ -141,15 +146,15 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *  @param  notification    notification
  */
 - (void)textDidChange:(NSNotification *)notification {
-    _swpTextViewText = super.text;
+    _swp_Text = super.text;
 
-    if (self.swpTextViewChange) self.swpTextViewChange(self, super.text);
+    if (self.swp_textViewChangeEvent) self.swp_textViewChangeEvent(self, super.text);
 
-    if ([self.aDelegate  respondsToSelector:@selector(swpTextView:changeText:)]) {
-        [self.aDelegate swpTextView:self changeText:super.text];
+    if ([self.swp_Delegate  respondsToSelector:@selector(swp_textView:changeText:)]) {
+        [self.swp_Delegate swp_textView:self changeText:super.text];
     }
 
-    [self showPlaceholder:super.text animateDuration:self.aHiddenAnimationTime];
+    [self aPlaceholder:super.text animate:self.aHiddenAnimationTime];
 }
 
 /**
@@ -159,18 +164,15 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @param  text    text
  */
-- (void)showPlaceholder:(NSString *)text animateDuration:(NSTimeInterval)duration {
+- (void)aPlaceholder:(NSString *)text animate:(NSTimeInterval)animate {
     //  Textview 长度为0
     if (self.text.length == 0) {
         
         //  判断是否为删除键
         if ([text isEqualToString:@""]) {
-            
-            [self swpTextViewPlaceholderDisplay:YES animateDuration:duration];
+            [self swp_placeholderHidden:NO duration:animate];
         } else {
-            
-            [self swpTextViewPlaceholderDisplay:NO animateDuration:duration];
-            
+            [self swp_placeholderHidden:YES duration:animate];
         }
         
     } else {
@@ -178,66 +180,64 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
         if (self.text.length == 1) {
             //  Textview 长度为1时候
             if ([text isEqualToString:@""]) {
-                
                 //  判断是否为删除键
-                [self swpTextViewPlaceholderDisplay:YES animateDuration:duration];
+                [self swp_placeholderHidden:NO duration:animate];
                 
             } else {
                 //  不是删除
-                [self swpTextViewPlaceholderDisplay:NO animateDuration:duration];
+               [self swp_placeholderHidden:YES duration:animate];
             }
         } else {
             //  长度不为1时候
-            [self swpTextViewPlaceholderDisplay:NO animateDuration:duration];
+            [self swp_placeholderHidden:YES duration:animate];
             
         }
     }
 }
-
 
 #pragma mark - Public Methods
 
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewInfo ( SwpTextView 信息 )
+ *  @brief  swp_info ( SwpTextView 信息 )
  *
  *  @return NSDictionary
  */
-+ (NSDictionary *)swpTextViewInfo {
++ (NSDictionary *)swp_info {
     return [SwpTextViewUtils swpTextViewUtilsGetInformation];
 }
 
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewVersion ( SwpTextView 版本信息 )
+ *  @brief  swp_version ( SwpTextView 版本信息 )
  *
  *  @return NSString
  */
-+ (NSString *)swpTextViewVersion {
-    return self.class.swpTextViewInfo[@"Version"];
++ (NSString *)swp_version {
+    return self.class.swp_info[@"Version"];
 }
 
 /**
  *  @author swp_song
  *
- *  @brief  swpTextView ( 快速初始化 )
+ *  @brief  swp_init ( 快速初始化 )
  *
  *  @return SwpTextView
  */
-+ (instancetype)swpTextView {
++ (instancetype)swp_textView {
     return [self.class new];
 }
 
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewInit ( 快速初始化 )
+ *  @brief  swp_init ( 快速初始化 )
  */
-+ (__kindof SwpTextView * (^)(void))swpTextViewInit {
++ (__kindof SwpTextView * (^)(void))swp_init {
     return ^(void) {
-        return [self.class swpTextView];
+        return [self.class swp_textView];
     };
 }
 
@@ -247,9 +247,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  swpText ( 设置显示文本 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpText {
+- (__kindof SwpTextView * _Nonnull (^)(NSString * _Nonnull))swp_text {
     return ^(NSString *text) {
-        [self swpTextViewPlaceholderDisplay:NO animateDuration:0];
+        [self swp_placeholderHidden:YES duration:0];
         self.text = text;
         return self;
     };
@@ -258,30 +258,28 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewPlaceholderDisplay:animateDuration:  ( 隐藏，显示 Placeholder  )
+ *  @brief  swp_placeholderHidden:duration: ( 隐藏，显示 Placeholder  )
  *
  *  @param  isDisplay   isDisplay
  *
  *  @param  duration    duration
  */
-- (void)swpTextViewPlaceholderDisplay:(BOOL)isDisplay animateDuration:(NSTimeInterval)duration {
-    
+- (void)swp_placeholderHidden:(BOOL)isHidden duration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration animations:^{
-        self.placeholderView.alpha = isDisplay;
+        self.placeholderView.alpha = !isHidden;
     }];
 }
-
 
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewDelegate ( 设置代理 )
+ *  @brief  swp_delegate ( 设置代理 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swpTextViewDelegate {
+- (__kindof SwpTextView * _Nonnull (^)(id<SwpTextViewDelegate> _Nonnull))swp_delegate {
     
     return ^(id<SwpTextViewDelegate>delegate) {
         if (!delegate) return self;
-        self.aDelegate = delegate;
+        self.swp_Delegate = delegate;
         return self;
     };
 }
@@ -289,9 +287,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  textSystemFontSize  ( 设置，输入文本字体大小，系统字体 )
+ *  @brief  swp_systemFontSize  ( 设置，输入文本字体大小，系统字体 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(CGFloat))textSystemFontSize {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))swp_systemFontSize {
     
     return ^(CGFloat size) {
         self.font = [UIFont systemFontOfSize:size];
@@ -302,12 +300,25 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  textFontColor  ( 设置，输入文本字体颜色 )
+ *  @brief  swp_textColor  ( 设置，输入文本字体颜色 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))textFontColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swp_textColor {
     
     return ^(UIColor *color) {
         self.textColor = color;
+        return self;
+    };
+}
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swp_font  ( 设置，输入文本字体 )
+ */
+- (__kindof SwpTextView * _Nonnull (^)(UIFont * _Nonnull))swp_font {
+    
+    return ^(UIFont *font) {
+        self.font = font;
         return self;
     };
 }
@@ -316,9 +327,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  placeholder ( 设置 Placeholder )
+ *  @brief  swp_placeholder ( 设置 Placeholder )
  */
-- (__kindof SwpTextView * _Nonnull (^)(NSString * _Nonnull))swpTextViewPlaceholder {
+- (__kindof SwpTextView * _Nonnull (^)(NSString * _Nonnull))swp_placeholder {
     return ^(NSString *placeholder) {
         self.placeholderView.text = placeholder;
         return self;
@@ -328,21 +339,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  placeholderSystemFontSize   ( 设置，Placeholder 字体大小，系统字体 )
+ *  @brief  swp_placeholderColor  ( 设置，placeholder 字体颜色 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(CGFloat))placeholderSystemFontSize {
-    return ^(CGFloat size) {
-        self.placeholderView.font = [UIFont systemFontOfSize:size];
-        return self;
-    };
-}
-
-/**
- *  @author swp_song
- *
- *  @brief  placeholderFontColor  ( 设置，placeholder 字体颜色 )
- */
-- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))placeholderFontColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swp_placeholderColor {
  
     return ^(UIColor *color) {
         self.placeholderView.textColor = color;
@@ -353,9 +352,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  placeholderFont ( 设置，placeholder 字体 )
+ *  @brief  swp_placeholderFont ( 设置，placeholder 字体 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(UIFont * _Nonnull))placeholderFont {
+- (__kindof SwpTextView * _Nonnull (^)(UIFont * _Nonnull))swp_placeholderFont {
     return ^(UIFont *font) {
         self.placeholderView.font = font;
         return self;
@@ -365,9 +364,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  swpViewKeyboardType ( 设置，键盘样式 )
+ *  @brief  swp_keyboardType    ( 设置，键盘样式 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(UIKeyboardType))swpViewKeyboardType {
+- (__kindof SwpTextView * _Nonnull (^)(UIKeyboardType))swp_keyboardType {
     
     return ^(UIKeyboardType keyboardType) {
         self.keyboardType = keyboardType;
@@ -392,7 +391,7 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
  *
  *  @brief  borderWidth ( 设置，显示边框宽度 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(CGFloat))borderWidth {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))swp_borderWidth {
     
     return ^(CGFloat borderWidth) {
         if (!borderWidth) return self;
@@ -404,9 +403,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  borderWidth ( 设置，显示边框圆角弧度 )
+ *  @brief  cornerRadius ( 设置，显示边框圆角弧度 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(CGFloat))cornerRadius {
+- (__kindof SwpTextView * _Nonnull (^)(CGFloat))swp_cornerRadius {
     return ^(CGFloat cornerRadius) {
         if (!cornerRadius) return self;
         self.layer.cornerRadius     = cornerRadius;
@@ -418,9 +417,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  borderColor ( 设置，显示边框颜色 )
+ *  @brief  swp_borderColor ( 设置，显示边框颜色 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))borderColor {
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swp_borderColor {
     return ^(UIColor *borderColor) {
         if (!borderColor) return self;
         self.layer.borderColor = borderColor.CGColor;
@@ -431,10 +430,9 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewBackgroundColor  ( 设置，显示背景颜色 )
+ *  @brief  swp_backgroundColor ( 设置，显示背景颜色 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swpTextViewBackgroundColor {
-    
+- (__kindof SwpTextView * _Nonnull (^)(UIColor * _Nonnull))swp_backgroundColor {
     return ^(UIColor *backgroundColor) {
         if (!backgroundColor) return self;
         self.backgroundColor = backgroundColor;
@@ -445,28 +443,26 @@ static CGFloat const kSwpTextViewAcquiesceFontSize = 15.0f;
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewChange:  ( SwpTextView 回调方法，用户输入文字变化调用 )
+ *  @brief  swp_textViewChangeEvent:  ( SwpTextView 回调方法，用户输入文字变化调用 )
  *
- *  @param  swpTextViewChange   swpTextViewChange
+ *  @param  changeEvent changeEvent
  */
-- (void)swpTextViewChange:(SwpTextViewTextChangeBlock)swpTextViewChange {
-    _swpTextViewChange = swpTextViewChange;
+- (void)swp_textViewChangeEvent:(SwpTextViewTextChangeBlock)changeEvent {
+    _swp_textViewChangeEvent = changeEvent;
 }
-
 
 /**
  *  @author swp_song
  *
- *  @brief  swpTextViewChangeChain: ( SwpTextView 回调方法，用户输入文字变化调用 )
+ *  @brief  swp_textViewChangeEventChain:   ( SwpTextView 回调方法，用户输入文字变化调用 )
  */
-- (__kindof SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nonnull))swpTextViewChangeChain {
+- (__kindof SwpTextView * _Nonnull (^)(SwpTextViewTextChangeBlock _Nonnull))swp_textViewChangeEventChain {
     
-    return ^(SwpTextViewTextChangeBlock swpTextViewChange) {
-        [self swpTextViewChange:swpTextViewChange];
+    return ^(SwpTextViewTextChangeBlock changeEvent) {
+        [self swp_textViewChangeEvent:changeEvent];
         return self;
     };
 }
-
 
 #pragma mark - Init UI Methods
 - (UILabel *)placeholderView {

@@ -14,6 +14,10 @@
 		F174FF5B21F876A8004158F8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF5821F876A8004158F8 /* RootViewController.swift */; };
 		F174FF5C21F876A8004158F8 /* XibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF5921F876A8004158F8 /* XibViewController.swift */; };
 		F174FF6221F8775C004158F8 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF6121F8775C004158F8 /* CodeViewController.swift */; };
+		F174FF6A21F96449004158F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF6921F96449004158F8 /* BaseViewController.swift */; };
+		F174FF6C21F98DD1004158F8 /* XibCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF6B21F98DD1004158F8 /* XibCustomViewController.swift */; };
+		F174FF6E21F98DE0004158F8 /* CodeCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF6D21F98DE0004158F8 /* CodeCustomViewController.swift */; };
+		F174FF7021F98FFD004158F8 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174FF6F21F98FFD004158F8 /* CustomTextView.swift */; };
 		F6E6AA67E49D11B2D2FE3107 /* Pods_Project_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91227E1DB094F985D3A9F233 /* Pods_Project_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,10 @@
 		F174FF5821F876A8004158F8 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F174FF5921F876A8004158F8 /* XibViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewController.swift; sourceTree = "<group>"; };
 		F174FF6121F8775C004158F8 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		F174FF6921F96449004158F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F174FF6B21F98DD1004158F8 /* XibCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibCustomViewController.swift; sourceTree = "<group>"; };
+		F174FF6D21F98DE0004158F8 /* CodeCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCustomViewController.swift; sourceTree = "<group>"; };
+		F174FF6F21F98FFD004158F8 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				F174FF5821F876A8004158F8 /* RootViewController.swift */,
+				F174FF6921F96449004158F8 /* BaseViewController.swift */,
 				F174FF5921F876A8004158F8 /* XibViewController.swift */,
 				F174FF6121F8775C004158F8 /* CodeViewController.swift */,
+				F174FF6B21F98DD1004158F8 /* XibCustomViewController.swift */,
+				F174FF6D21F98DE0004158F8 /* CodeCustomViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 		F174FF5A21F876A8004158F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F174FF6F21F98FFD004158F8 /* CustomTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,12 +231,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Project-Swift/Pods-Project-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwpTextView/SwpTextView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwpTextView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,10 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F174FF6A21F96449004158F8 /* BaseViewController.swift in Sources */,
 				F174FF5B21F876A8004158F8 /* RootViewController.swift in Sources */,
+				F174FF7021F98FFD004158F8 /* CustomTextView.swift in Sources */,
 				F174FF6221F8775C004158F8 /* CodeViewController.swift in Sources */,
+				F174FF6C21F98DD1004158F8 /* XibCustomViewController.swift in Sources */,
 				2DC8E0CA21F4AA9F000DA778 /* AppDelegate.swift in Sources */,
 				F174FF5C21F876A8004158F8 /* XibViewController.swift in Sources */,
+				F174FF6E21F98DE0004158F8 /* CodeCustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,14 +408,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Project-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.Project-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,14 +432,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Project-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.Project-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.swp-song.";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
