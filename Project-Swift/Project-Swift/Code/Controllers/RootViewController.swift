@@ -13,7 +13,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.title = "Switf"
+        self.navigationItem.title = "Swift"
     }
 }
 

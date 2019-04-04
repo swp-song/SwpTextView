@@ -26,7 +26,7 @@ open class SwpTextView: UITextView {
     
     private lazy var placeholderView : UILabel = {
         let label : UILabel = UILabel()
-        label.text      = "placeholder"
+        label.text      = "Placeholder"
         label.font      = UIFont.systemFont(ofSize: kPlaceholderDefaultFontSize)
         label.textColor = .lightGray
         return label;

@@ -1,6 +1,6 @@
 {
   "name": "SwpTextView",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "summary": "简单封装 TextView",
   "description": "TODO: 简单封装 TextView",
   "homepage": "https://github.com/swp-song/SwpTextView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/swp-song/SwpTextView.git",
-    "tag": "3.0.0"
+    "tag": "3.1.0"
   },
   "platforms": {
     "ios": "9.0"
