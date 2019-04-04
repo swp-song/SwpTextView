@@ -43,8 +43,10 @@ TODO: 简单封装 TextView
   s.subspec 'Swift' do |swift|
     swift.ios.deployment_target = '12.0'
     swift.source_files = 'SwpTextView/Swift/Code/*.swift'
+    
   end
   
+  s.swift_versions = ['4.2', '5.0']
   s.frameworks    = 'UIKit'
   s.requires_arc  = true
   

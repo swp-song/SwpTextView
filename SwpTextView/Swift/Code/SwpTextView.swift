@@ -76,7 +76,7 @@ public extension SwpTextView {
     ///   - isHidden:    isHidden
     ///   - animateTime: animateTime
     /// - Returns: SwpTextView
-    @discardableResult public func swp_placeholderHidden(_ isHidden : Bool, animateTime : TimeInterval = 0.5) -> Self {
+    @discardableResult func swp_placeholderHidden(_ isHidden : Bool, animateTime : TimeInterval = 0.5) -> Self {
         self.isPlaceholderHidden(isHidden, animate: animateTime)
         return self
     }
@@ -86,7 +86,7 @@ public extension SwpTextView {
     ///
     /// - Parameter text: text
     /// - Returns: SwpTextView
-    @discardableResult public func swp_text(_ text : String) -> Self {
+    @discardableResult func swp_text(_ text : String) -> Self {
         self.swp_placeholderHidden(true, animateTime: 0)
         self.text = text
         return self
@@ -98,7 +98,7 @@ public extension SwpTextView {
     ///
     /// - Parameter delete: delete
     /// - Returns: SwpTextView
-    @discardableResult public func swp_delegate(_ delete : SwpTextViewDelegate?) -> Self {
+    @discardableResult func swp_delegate(_ delete : SwpTextViewDelegate?) -> Self {
         self.swp_delegate = delete
         return self
     }
@@ -108,14 +108,14 @@ public extension SwpTextView {
     ///
     /// - Parameter didChangeEvent: didChangeEvent
     /// - Returns: SwpTextView
-    @discardableResult public func swp_textViewDidChangeEvent(_ didChangeEvent : @escaping SwpTextViewDidChangeEvent) -> Self {
+    @discardableResult func swp_textViewDidChangeEvent(_ didChangeEvent : @escaping SwpTextViewDidChangeEvent) -> Self {
         self.swp_textViewDidChangeEvent = didChangeEvent
         return self
     }
 }
 
 // MARK: - Public Placeholder Function
-extension SwpTextView {
+public extension SwpTextView {
     
     
     ///
@@ -123,7 +123,7 @@ extension SwpTextView {
     ///
     /// - Parameter placeholder: placeholder
     /// - Returns: SwpTextView
-    @discardableResult public func swp_placeholder(_ placeholder : String?) -> Self {
+    @discardableResult func swp_placeholder(_ placeholder : String?) -> Self {
         self.placeholderView.text = placeholder
         return self
     }
@@ -133,7 +133,7 @@ extension SwpTextView {
     ///
     /// - Parameter font: font
     /// - Returns: SwpTextView
-    @discardableResult public func swp_placeholderFont(_ font : UIFont) -> Self {
+    @discardableResult func swp_placeholderFont(_ font : UIFont) -> Self {
         self.placeholderView.font = font
         return self
     }
@@ -143,21 +143,21 @@ extension SwpTextView {
     ///
     /// - Parameter color: color
     /// - Returns: SwpTextView
-    @discardableResult public func swp_placeholderColor(_ color : UIColor) -> Self {
+    @discardableResult func swp_placeholderColor(_ color : UIColor) -> Self {
         self.placeholderView.textColor = color
         return self
     }
 }
 
 // MARK: - Public UITextView Function
-extension SwpTextView {
+public extension SwpTextView {
     
     ///
     /// # set backgroundColor
     ///
     /// - Parameter backgroundColor: backgroundColor
     /// - Returns: SwpTextView
-    @discardableResult public func swp_backgroundColor(_ backgroundColor : UIColor?) -> Self {
+    @discardableResult func swp_backgroundColor(_ backgroundColor : UIColor?) -> Self {
         self.backgroundColor = backgroundColor;
         return self
     }
@@ -167,7 +167,7 @@ extension SwpTextView {
     ///
     /// - Parameter size: size
     /// - Returns: SwpTextView
-    @discardableResult public func swp_systemFontSize(_ size : CGFloat = 15) -> Self {
+    @discardableResult func swp_systemFontSize(_ size : CGFloat = 15) -> Self {
         self.font = UIFont.systemFont(ofSize: size)
         return self
     }
@@ -177,7 +177,7 @@ extension SwpTextView {
     ///
     /// - Parameter font: font
     /// - Returns: SwpTextView
-    @discardableResult public func swp_font(_ font : UIFont?) -> Self {
+    @discardableResult func swp_font(_ font : UIFont?) -> Self {
         self.font = font
         return self
     }
@@ -187,7 +187,7 @@ extension SwpTextView {
     ///
     /// - Parameter color: color
     /// - Returns: SwpTextView
-    @discardableResult public func swp_textColor(_ color : UIColor?) -> Self {
+    @discardableResult func swp_textColor(_ color : UIColor?) -> Self {
         self.textColor = color
         return self
     }
@@ -197,14 +197,14 @@ extension SwpTextView {
     ///
     /// - Parameter keyboardType: keyboardType
     /// - Returns: SwpTextView
-    @discardableResult public func swp_keyboardType(_ keyboardType : UIKeyboardType) -> Self {
+    @discardableResult func swp_keyboardType(_ keyboardType : UIKeyboardType) -> Self {
         self.keyboardType = keyboardType
         return self
     }
 }
 
 // MARK: - Public Layer Function
-extension SwpTextView {
+public extension SwpTextView {
     
     
     ///
@@ -212,7 +212,7 @@ extension SwpTextView {
     ///
     /// - Parameter borderWidth: borderWidth
     /// - Returns: SwpTextView
-    @discardableResult public func swp_borderWidth(_ borderWidth : CGFloat) -> Self {
+    @discardableResult func swp_borderWidth(_ borderWidth : CGFloat) -> Self {
         self.layer.borderWidth = borderWidth
         return self
     }
@@ -222,7 +222,7 @@ extension SwpTextView {
     ///
     /// - Parameter cornerRadius: cornerRadius
     /// - Returns: SwpTextView
-    @discardableResult public func swp_cornerRadius(_ cornerRadius : CGFloat) -> Self {
+    @discardableResult func swp_cornerRadius(_ cornerRadius : CGFloat) -> Self {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
         return self
@@ -233,7 +233,7 @@ extension SwpTextView {
     ///
     /// - Parameter borderColor: borderColor
     /// - Returns: SwpTextView
-    @discardableResult public func swp_borderColor(_ borderColor : UIColor) -> Self {
+    @discardableResult func swp_borderColor(_ borderColor : UIColor) -> Self {
         self.layer.borderColor = borderColor.cgColor
         return self
     }
