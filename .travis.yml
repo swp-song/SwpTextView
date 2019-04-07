@@ -1,11 +1,4 @@
 osx_image: xcode10.2
 language: objective-c
-xcode_project: Project-OC/Project-OC.xcworkspace
-xcode_scheme: Project-OC
-
-# install:
-  # - bundle install
-  # - gem install xcpretty-travis-formatter
-
 script:
-  - xcodebuild test -workspace  -destination "platform=iOS Simulator,name=iPhone Xr" | xcpretty -f `xcpretty-travis-formatter`
+  - xcodebuild test -workspace Project-OC.xcworkspace -scheme Project-OC -destination "platform=iOS Simulator,name=iPhone Xr" | xcpretty -f `xcpretty-travis-formatter`
