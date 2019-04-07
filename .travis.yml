@@ -1,6 +1,8 @@
 osx_image: xcode10.2
 language: objective-c
-xcode_project: Project-OC//Project-OC.xcworkspace
-xcode_schemes: Project-OC
+xcode_project: Project-OC/Project-OC.xcworkspace
+xcode_scheme: Project-OC
 script:
   - bundle exec fastlane test_ci
+
+
