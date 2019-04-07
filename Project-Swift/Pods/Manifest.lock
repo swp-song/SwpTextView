@@ -1,6 +1,6 @@
 PODS:
   - SnapKit (4.2.0)
-  - SwpTextView/Swift (3.1.0)
+  - SwpTextView/Swift (3.2.0)
 
 DEPENDENCIES:
   - SnapKit
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwpTextView: bc8588cc3114b3e76fb3bce6fb3bcc9d0f06dfee
+  SwpTextView: 41c02306c16d369b1cfb35444145de4b91dbc268
 
 PODFILE CHECKSUM: e3126175e9862aac2bc3b100ff67c70d69f37a12
 

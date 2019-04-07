@@ -1,5 +1,6 @@
 osx_image: xcode10.2
 language: objective-c
-# path to your xcodeproj folder
 xcode_project: Project-OC//Project-OC.xcworkspace
 xcode_schemes: Project-OC
+script:
+  - bundle exec fastlane test_ci

@@ -1,6 +1,6 @@
 # SwpTextView
 
-[![Xcode](https://img.shields.io/badge/Xcode-9.3-25B1F6.svg)](https://developer.apple.com/xcode)
+[![Xcode](https://img.shields.io/badge/Xcode-10.2-25B1F6.svg)](https://developer.apple.com/xcode)
 [![iOS](https://img.shields.io/badge/iOS-8.0+-1C75AF.svg)](https://developer.apple.com/xcode)
 [![Build Status](https://travis-ci.org/swp-song/SwpTextView.svg?branch=master)](https://travis-ci.org/swp-song/SwpTextView)
 [![Version](https://img.shields.io/cocoapods/v/SwpTextView.svg?style=flat)](http://cocoapods.org/pods/SwpTextView)
