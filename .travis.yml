@@ -3,4 +3,4 @@ language: objective-c
 xcode_project: Project-OC/Project-OC.xcworkspace
 xcode_schemes: Project-OC
 script:
-  - xcodebuild test -workspace Project-OC.xcworkspace -scheme Project-OC -destination "platform=iOS Simulator,name=iPhone Xr" | xcpretty -f `xcpretty-travis-formatter`
+  - xcodebuild test -destination "platform=iOS Simulator,name=iPhone Xr" | xcpretty -f `xcpretty-travis-formatter`
